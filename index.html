@@ -10,140 +10,34 @@
 body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .app{max-width:480px;margin:0 auto;min-height:100vh;background:#04060f;position:relative;padding-bottom:20px;overflow:hidden}
 
-/* ============================================================
-   UNIVERSE BACKGROUND
-   ============================================================ */
-.universe{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  overflow:hidden;
-  background:
-    radial-gradient(ellipse 100% 60% at 20% 10%, rgba(80,60,180,.35) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 70% at 85% 25%, rgba(30,100,200,.3) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 50% at 50% 90%, rgba(180,60,140,.2) 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, #0a1435 0%, #050a1f 40%, #04060f 100%);
-}
-/* Twinkling stars — 3 layers */
-.universe::before,
-.universe::after,
-.stars-layer{
-  content:'';
-  position:absolute;
-  inset:-50%;
-  background-image:
-    radial-gradient(1.5px 1.5px at 40px 60px, #fff, transparent),
-    radial-gradient(1px 1px at 120px 30px, #d4d4ff, transparent),
-    radial-gradient(2px 2px at 200px 90px, #fff, transparent),
-    radial-gradient(1px 1px at 80px 150px, #b8b8ff, transparent),
-    radial-gradient(1.5px 1.5px at 250px 200px, #fff, transparent),
-    radial-gradient(1px 1px at 320px 60px, #e0e0ff, transparent),
-    radial-gradient(1.5px 1.5px at 30px 300px, #fff, transparent),
-    radial-gradient(2px 2px at 150px 260px, #ffe4b5, transparent),
-    radial-gradient(1px 1px at 280px 320px, #d4d4ff, transparent),
-    radial-gradient(1.5px 1.5px at 380px 180px, #fff, transparent);
-  background-repeat:repeat;
-  background-size:400px 400px;
-  animation:drift 120s linear infinite;
-}
+/* UNIVERSE BACKGROUND */
+.universe{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 100% 60% at 20% 10%, rgba(80,60,180,.35) 0%, transparent 55%),radial-gradient(ellipse 90% 70% at 85% 25%, rgba(30,100,200,.3) 0%, transparent 55%),radial-gradient(ellipse 80% 50% at 50% 90%, rgba(180,60,140,.2) 0%, transparent 60%),radial-gradient(circle at 50% 50%, #0a1435 0%, #050a1f 40%, #04060f 100%)}
+.universe::before,.universe::after,.stars-layer{content:'';position:absolute;inset:-50%;background-image:radial-gradient(1.5px 1.5px at 40px 60px, #fff, transparent),radial-gradient(1px 1px at 120px 30px, #d4d4ff, transparent),radial-gradient(2px 2px at 200px 90px, #fff, transparent),radial-gradient(1px 1px at 80px 150px, #b8b8ff, transparent),radial-gradient(1.5px 1.5px at 250px 200px, #fff, transparent),radial-gradient(1px 1px at 320px 60px, #e0e0ff, transparent),radial-gradient(1.5px 1.5px at 30px 300px, #fff, transparent),radial-gradient(2px 2px at 150px 260px, #ffe4b5, transparent),radial-gradient(1px 1px at 280px 320px, #d4d4ff, transparent),radial-gradient(1.5px 1.5px at 380px 180px, #fff, transparent);background-repeat:repeat;background-size:400px 400px;animation:drift 120s linear infinite}
 .universe::before{opacity:.9;animation-duration:150s}
 .universe::after{background-size:600px 600px;opacity:.4;animation-duration:200s;animation-direction:reverse}
 .stars-layer{background-size:250px 250px;opacity:.6;animation-duration:100s}
-@keyframes drift{
-  from{transform:translate(0,0)}
-  to{transform:translate(-400px,-400px)}
-}
-@keyframes twinkleStar{
-  0%,100%{opacity:.3}
-  50%{opacity:1}
-}
-
-/* Orbit rings behind everything */
-.orbit-ring{
-  position:absolute;
-  border:1px solid rgba(255,204,0,.12);
-  border-radius:50%;
-  pointer-events:none;
-}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-400px,-400px)}}
+.orbit-ring{position:absolute;border:1px solid rgba(255,204,0,.12);border-radius:50%;pointer-events:none}
 .orbit-ring.r1{width:520px;height:520px;top:-180px;left:-120px;animation:spinSlow 90s linear infinite}
 .orbit-ring.r2{width:800px;height:800px;top:-300px;left:-260px;border-color:rgba(80,160,255,.1);animation:spinSlow 140s linear infinite reverse}
 .orbit-ring.r3{width:300px;height:300px;bottom:-100px;right:-80px;border-color:rgba(255,204,0,.1);animation:spinSlow 70s linear infinite}
 @keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-
-/* Shooting stars */
-.shooting-star{
-  position:absolute;
-  width:2px;
-  height:2px;
-  background:#fff;
-  border-radius:50%;
-  box-shadow:0 0 6px 2px rgba(255,255,255,.8);
-  animation:shoot 6s ease-in infinite;
-}
-.shooting-star::before{
-  content:'';
-  position:absolute;
-  top:0;right:0;
-  width:80px;height:1px;
-  background:linear-gradient(90deg, transparent, rgba(255,255,255,.9));
-  transform:translateX(100%);
-}
+.shooting-star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 6px 2px rgba(255,255,255,.8);animation:shoot 6s ease-in infinite}
+.shooting-star::before{content:'';position:absolute;top:0;right:0;width:80px;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.9));transform:translateX(100%)}
 .shooting-star.s1{top:8%;left:10%;animation-delay:2s}
 .shooting-star.s2{top:22%;left:60%;animation-delay:5s}
 .shooting-star.s3{top:40%;left:30%;animation-delay:9s}
-@keyframes shoot{
-  0%{transform:translate(0,0) rotate(-30deg);opacity:0}
-  5%{opacity:1}
-  15%{transform:translate(180px,120px) rotate(-30deg);opacity:0}
-  100%{transform:translate(180px,120px) rotate(-30deg);opacity:0}
-}
-
-/* Distant planets */
-.planet{
-  position:absolute;
-  border-radius:50%;
-  pointer-events:none;
-  opacity:.85;
-}
-.planet.p1{
-  width:80px;height:80px;
-  top:12%;right:8%;
-  background:radial-gradient(circle at 30% 30%, #ffcc00 0%, #b87a00 60%, #4a3000 100%);
-  box-shadow:inset -10px -8px 20px rgba(0,0,0,.6), 0 0 30px rgba(255,204,0,.4);
-  animation:float 8s ease-in-out infinite;
-}
-.planet.p2{
-  width:50px;height:50px;
-  bottom:30%;left:6%;
-  background:radial-gradient(circle at 30% 30%, #6b8ff5 0%, #2e40a3 60%, #141c4d 100%);
-  box-shadow:inset -6px -5px 14px rgba(0,0,0,.6), 0 0 20px rgba(107,143,245,.4);
-  animation:float 10s ease-in-out infinite reverse;
-}
-.planet.p3{
-  width:32px;height:32px;
-  top:60%;right:14%;
-  background:radial-gradient(circle at 30% 30%, #f57db5 0%, #8a2e5b 60%, #3a0f24 100%);
-  box-shadow:inset -4px -3px 10px rgba(0,0,0,.6), 0 0 14px rgba(245,125,181,.4);
-  animation:float 7s ease-in-out infinite;
-}
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
-
-/* Nebula clouds */
-.nebula{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(60px);
-  pointer-events:none;
-}
+@keyframes shoot{0%{transform:translate(0,0) rotate(-30deg);opacity:0}5%{opacity:1}15%{transform:translate(180px,120px) rotate(-30deg);opacity:0}100%{transform:translate(180px,120px) rotate(-30deg);opacity:0}}
+.planet{position:absolute;border-radius:50%;pointer-events:none;opacity:.85}
+.planet.p1{width:80px;height:80px;top:12%;right:8%;background:radial-gradient(circle at 30% 30%, #ffcc00 0%, #b87a00 60%, #4a3000 100%);box-shadow:inset -10px -8px 20px rgba(0,0,0,.6), 0 0 30px rgba(255,204,0,.4);animation:float 8s ease-in-out infinite}
+.planet.p2{width:50px;height:50px;bottom:30%;left:6%;background:radial-gradient(circle at 30% 30%, #6b8ff5 0%, #2e40a3 60%, #141c4d 100%);box-shadow:inset -6px -5px 14px rgba(0,0,0,.6), 0 0 20px rgba(107,143,245,.4);animation:float 10s ease-in-out infinite reverse}
+.planet.p3{width:32px;height:32px;top:60%;right:14%;background:radial-gradient(circle at 30% 30%, #f57db5 0%, #8a2e5b 60%, #3a0f24 100%);box-shadow:inset -4px -3px 10px rgba(0,0,0,.6), 0 0 14px rgba(245,125,181,.4);animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.nebula{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
 .nebula.n1{width:400px;height:400px;background:rgba(80,60,180,.35);top:-100px;left:-100px}
 .nebula.n2{width:350px;height:350px;background:rgba(30,120,200,.25);top:40%;right:-120px}
 .nebula.n3{width:300px;height:300px;background:rgba(200,80,160,.2);bottom:-80px;left:20%}
 
-/* PAGE */
 .page{display:none;animation:fadeIn .3s ease;position:relative;z-index:2}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -156,9 +50,55 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .starlink-badge span{font-size:14px;font-weight:800;letter-spacing:2px;color:#ffcc00;text-transform:uppercase;text-shadow:0 0 8px rgba(255,204,0,.5)}
 .hero-title{font-size:26px;font-weight:900;text-align:center;color:#fff;margin-bottom:14px;line-height:1.25;letter-spacing:-.5px;text-shadow:0 0 20px rgba(255,204,0,.35),0 0 40px rgba(255,204,0,.15)}
 .hero-title .neon{background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(255,204,0,.55))}
+
+/* LIVE STATUS */
+.live-status{background:linear-gradient(135deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.25);border-radius:14px;padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:10px;backdrop-filter:blur(8px);box-shadow:0 0 20px rgba(255,204,0,.08)}
+.live-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.live-pulse{width:8px;height:8px;border-radius:50%;background:#34c759;box-shadow:0 0 8px rgba(52,199,89,.9);position:relative;flex-shrink:0}
+.live-pulse::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(52,199,89,.5);animation:pulseRing 1.6s ease-out infinite}
+@keyframes pulseRing{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.live-info{display:flex;flex-direction:column;gap:1px;min-width:0}
+.live-satellites{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.live-satellites span{color:#ffcc00;font-weight:900}
+.live-coverage{font-size:10.5px;font-weight:600;color:#34c759;display:flex;align-items:center;gap:5px;letter-spacing:.3px}
+.live-coverage i{font-size:9px}
+
+/* SPEED TEST */
+.speedtest{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.22);border-radius:18px;padding:18px 18px;margin-bottom:22px;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04)}
+.speedtest-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.speedtest-head .title{font-size:13px;font-weight:800;color:#fff;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+.speedtest-head .title i{color:#ffcc00;font-size:14px}
+.speedtest-btn{background:rgba(255,204,0,.1);border:1px solid rgba(255,204,0,.35);color:#ffcc00;font-size:11px;font-weight:800;padding:6px 12px;border-radius:20px;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;font-family:inherit;transition:all .2s}
+.speedtest-btn:active{background:rgba(255,204,0,.2);transform:scale(.97)}
+.speedtest-btn:disabled{opacity:.5;cursor:not-allowed}
+.speedtest-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.speedtest-cell{text-align:center;padding:10px 6px;background:rgba(255,204,0,.05);border-radius:10px;border:1px solid rgba(255,204,0,.1)}
+.speedtest-cell .val{font-size:17px;font-weight:900;color:#ffcc00;letter-spacing:-.5px;margin-bottom:2px;transition:color .3s}
+.speedtest-cell .unit{font-size:10.5px;font-weight:700;color:#94a3b8;letter-spacing:.8px;text-transform:uppercase}
+.speedtest-cell .lbl{font-size:9.5px;font-weight:600;color:#64748b;letter-spacing:.6px;margin-top:4px;text-transform:uppercase}
+.speedtest-cell.testing .val{color:#94a3b8}
+.speedtest-cell.good .val{color:#34c759}
+
+/* WHAT'S IN THE BOX */
+.box-section{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.22);border-radius:18px;padding:20px 18px;margin-bottom:22px;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04);cursor:pointer;transition:border-color .25s}
+.box-section:active{border-color:rgba(255,204,0,.5)}
+.box-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.box-head-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.box-icon{width:38px;height:38px;background:rgba(255,204,0,.12);border:1px solid rgba(255,204,0,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#ffcc00;font-size:16px;flex-shrink:0}
+.box-info .title{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-bottom:2px}
+.box-info .sub{font-size:11.5px;color:#94a3b8;font-weight:500}
+.box-toggle{color:#ffcc00;font-size:14px;transition:transform .3s;flex-shrink:0}
+.box-section.open .box-toggle{transform:rotate(180deg)}
+.box-content{max-height:0;overflow:hidden;transition:max-height .4s ease;margin-top:0}
+.box-section.open .box-content{max-height:500px;margin-top:16px}
+.box-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid rgba(255,204,0,.1);font-size:13px;color:#cbd5e0;line-height:1.4}
+.box-item:first-child{border-top:none;padding-top:0}
+.box-item i{color:#34c759;font-size:11px;margin-top:3px;flex-shrink:0}
+.box-item strong{color:#fff;font-weight:700}
+
 .important-banner{background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);border-radius:14px;padding:14px 16px;margin-bottom:22px;font-size:13.5px;line-height:1.5;color:#cbd5e0;backdrop-filter:blur(6px);box-shadow:0 0 20px rgba(255,204,0,.08)}
 .important-banner strong{font-weight:800;color:#ffcc00}
-.powered-by{text-align:center;margin-bottom:26px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;color:#94a3b8;font-weight:500}
+.powered-by{text-align:center;margin-bottom:22px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;color:#94a3b8;font-weight:500}
 .powered-by .mtn-brand{font-family:'Arial Black',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.5px;color:#ffcc00;font-style:italic;line-height:1;text-shadow:0 0 12px rgba(255,204,0,.6)}
 .powered-by .mtn-brand span{color:#fff;font-style:italic;display:block;font-size:10px;letter-spacing:0;margin-top:2px;font-weight:900}
 .plan-card{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.18);border-radius:22px;padding:26px 22px;margin-bottom:18px;color:#fff;position:relative;transition:transform .15s,box-shadow .25s,border-color .25s;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04)}
@@ -179,105 +119,25 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .secure-footer{background:rgba(255,204,0,.06);border:1px solid rgba(255,204,0,.2);border-radius:14px;padding:16px 18px;margin-top:22px;font-size:13.5px;line-height:1.5;color:#ffe066;backdrop-filter:blur(6px)}
 .secure-footer strong{font-weight:800;color:#ffcc00}
 
-/* ============================================================
-   TESTIMONIALS SECTION
-   ============================================================ */
-.testimonials{
-  margin-top:32px;
-  padding-top:26px;
-  border-top:1px solid rgba(255,204,0,.12);
-}
-.testi-head{
-  text-align:center;
-  margin-bottom:22px;
-}
-.testi-head h2{
-  font-size:18px;
-  font-weight:900;
-  color:#fff;
-  margin-bottom:6px;
-  letter-spacing:-.3px;
-  text-shadow:0 0 16px rgba(255,204,0,.3);
-}
-.testi-head p{
-  font-size:12.5px;
-  color:#94a3b8;
-  font-weight:500;
-}
-.testi-head .stars-row{
-  display:inline-flex;
-  gap:3px;
-  margin-top:8px;
-  color:#ffcc00;
-  font-size:12px;
-  text-shadow:0 0 8px rgba(255,204,0,.6);
-}
-.testi-card{
-  background:linear-gradient(160deg,rgba(30,41,59,.85) 0%,rgba(15,23,42,.95) 100%);
-  border:1px solid rgba(255,204,0,.14);
-  border-radius:18px;
-  padding:18px 18px;
-  margin-bottom:12px;
-  backdrop-filter:blur(8px);
-  position:relative;
-  transition:transform .15s, border-color .25s;
-}
+/* TESTIMONIALS */
+.testimonials{margin-top:32px;padding-top:26px;border-top:1px solid rgba(255,204,0,.12)}
+.testi-head{text-align:center;margin-bottom:22px}
+.testi-head h2{font-size:18px;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-.3px;text-shadow:0 0 16px rgba(255,204,0,.3)}
+.testi-head p{font-size:12.5px;color:#94a3b8;font-weight:500}
+.testi-head .stars-row{display:inline-flex;gap:3px;margin-top:8px;color:#ffcc00;font-size:12px;text-shadow:0 0 8px rgba(255,204,0,.6)}
+.testi-card{background:linear-gradient(160deg,rgba(30,41,59,.85) 0%,rgba(15,23,42,.95) 100%);border:1px solid rgba(255,204,0,.14);border-radius:18px;padding:18px 18px;margin-bottom:12px;backdrop-filter:blur(8px);position:relative;transition:transform .15s, border-color .25s}
 .testi-card:active{transform:scale(.99);border-color:rgba(255,204,0,.35)}
-.testi-top{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:12px;
-}
-.testi-avatar{
-  width:42px;height:42px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  font-size:16px;
-  color:#1c1c1e;
-  background:linear-gradient(135deg,#ffcc00,#ff9500);
-  box-shadow:0 0 14px rgba(255,204,0,.4);
-  flex-shrink:0;
-}
+.testi-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#1c1c1e;background:linear-gradient(135deg,#ffcc00,#ff9500);box-shadow:0 0 14px rgba(255,204,0,.4);flex-shrink:0}
 .testi-avatar.blue{background:linear-gradient(135deg,#6b8ff5,#2e40a3);color:#fff}
 .testi-avatar.pink{background:linear-gradient(135deg,#f57db5,#8a2e5b);color:#fff}
 .testi-avatar.green{background:linear-gradient(135deg,#4ade80,#15803d);color:#fff}
 .testi-info{flex:1;min-width:0}
-.testi-info .name{
-  font-size:14px;
-  font-weight:800;
-  color:#fff;
-  letter-spacing:-.2px;
-  margin-bottom:2px;
-}
-.testi-info .role{
-  font-size:11.5px;
-  color:#94a3b8;
-  font-weight:500;
-  display:flex;
-  align-items:center;
-  gap:5px;
-}
-.testi-info .role i{
-  color:#ffcc00;
-  font-size:10px;
-}
-.testi-stars{
-  color:#ffcc00;
-  font-size:11px;
-  letter-spacing:1px;
-  text-shadow:0 0 8px rgba(255,204,0,.6);
-  flex-shrink:0;
-}
-.testi-body{
-  font-size:13.5px;
-  line-height:1.55;
-  color:#cbd5e0;
-  font-weight:450;
-}
+.testi-info .name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-bottom:2px}
+.testi-info .role{font-size:11.5px;color:#94a3b8;font-weight:500;display:flex;align-items:center;gap:5px}
+.testi-info .role i{color:#ffcc00;font-size:10px}
+.testi-stars{color:#ffcc00;font-size:11px;letter-spacing:1px;text-shadow:0 0 8px rgba(255,204,0,.6);flex-shrink:0}
+.testi-body{font-size:13.5px;line-height:1.55;color:#cbd5e0;font-weight:450}
 .testi-body .highlight{color:#ffcc00;font-weight:700}
 
 /* CONFIRM */
@@ -396,6 +256,49 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .review-note strong{color:#1c1c1e;font-weight:800}
 .review-note i{color:#ff6b00;margin-right:6px}
 
+/* ORDER TRACKING */
+.track-page{background:#fff;min-height:100vh;padding:30px 24px 60px}
+.track-header{text-align:center;margin-bottom:26px}
+.track-icon{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#fff8d6,#ffe9a3);border:2px solid #ffcc00;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:36px;color:#b87200;box-shadow:0 0 30px rgba(255,204,0,.4);animation:trackPop .6s ease}
+@keyframes trackPop{0%{transform:scale(0)}70%{transform:scale(1.1)}100%{transform:scale(1)}}
+.track-header h1{font-size:22px;font-weight:900;color:#1c1c1e;margin-bottom:6px;letter-spacing:-.4px}
+.track-header p{font-size:14px;color:#5f6368;line-height:1.5}
+.track-id{display:inline-block;margin-top:12px;font-size:13px;font-weight:800;color:#b87200;letter-spacing:1.5px;padding:6px 14px;background:#fff8d6;border-radius:20px;border:1px solid rgba(255,204,0,.4);font-family:'Courier New',monospace}
+.track-progress{display:flex;align-items:center;justify-content:space-between;margin:30px 0 20px;position:relative;padding:0 6px}
+.track-progress::before{content:'';position:absolute;top:14px;left:26px;right:26px;height:3px;background:#e5e5ea;border-radius:2px;z-index:0}
+.track-progress-fill{position:absolute;top:14px;left:26px;height:3px;background:linear-gradient(90deg,#ffcc00,#ff9500);border-radius:2px;z-index:1;transition:width .8s ease}
+.tp-step{display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;position:relative}
+.tp-dot{width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid #e5e5ea;display:flex;align-items:center;justify-content:center;font-size:11px;color:#b0b0b5;font-weight:800;transition:all .4s}
+.tp-step.done .tp-dot{background:#ffcc00;border-color:#ffcc00;color:#1c1c1e;box-shadow:0 0 12px rgba(255,204,0,.6)}
+.tp-step.active .tp-dot{background:#fff;border-color:#ff6b00;color:#ff6b00;animation:dotPulse 1.4s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,0,.5)}50%{box-shadow:0 0 0 8px rgba(255,107,0,0)}}
+.tp-label{font-size:10px;font-weight:700;color:#8e8e93;letter-spacing:.3px;text-align:center;max-width:60px;line-height:1.2}
+.tp-step.done .tp-label{color:#1c1c1e}
+.tp-step.active .tp-label{color:#ff6b00}
+.track-list{background:#f8f9fb;border-radius:18px;padding:20px 18px;margin-top:24px}
+.track-item{display:flex;gap:14px;padding:12px 0;position:relative}
+.track-item:not(:last-child)::before{content:'';position:absolute;left:11px;top:32px;bottom:-4px;width:2px;background:#e5e5ea}
+.track-item.done:not(:last-child)::before{background:#ffcc00}
+.track-bullet{width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid #e5e5ea;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:#b0b0b5;z-index:2;margin-top:2px}
+.track-item.done .track-bullet{background:#ffcc00;border-color:#ffcc00;color:#1c1c1e}
+.track-item.active .track-bullet{background:#fff;border-color:#ff6b00;color:#ff6b00}
+.track-item.active .track-bullet i{animation:spin 1.2s linear infinite;display:inline-block}
+.track-body{flex:1;min-width:0}
+.track-title{font-size:14px;font-weight:800;color:#1c1c1e;letter-spacing:-.2px;margin-bottom:2px}
+.track-item:not(.done):not(.active) .track-title{color:#b0b0b5}
+.track-meta{font-size:12px;color:#8e8e93;font-weight:500;line-height:1.4}
+.track-item.done .track-meta{color:#5f6368}
+.track-time{font-size:11px;color:#b0b0b5;font-weight:600;flex-shrink:0;margin-left:8px;margin-top:2px}
+.track-item.done .track-time{color:#ff6b00}
+.track-eta{background:linear-gradient(135deg,#fff8d6 0%,#fff4c0 100%);border:1.5px solid rgba(255,204,0,.5);border-radius:16px;padding:18px 18px;margin-top:22px;display:flex;align-items:center;gap:14px}
+.track-eta .eta-icon{width:44px;height:44px;background:#ffcc00;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#1c1c1e;flex-shrink:0;box-shadow:0 4px 12px rgba(255,204,0,.4)}
+.track-eta .eta-body{flex:1;min-width:0}
+.track-eta .eta-label{font-size:10.5px;font-weight:800;color:#8a5a00;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:4px}
+.track-eta .eta-value{font-size:15px;font-weight:900;color:#1c1c1e;letter-spacing:-.2px;line-height:1.3}
+.track-eta .eta-sub{font-size:11.5px;color:#7a5a00;margin-top:3px;font-weight:500}
+.track-done{width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,#ffcc00,#ff9500);color:#1c1c1e;font-size:15px;font-weight:900;cursor:pointer;letter-spacing:.4px;margin-top:24px;font-family:inherit;text-transform:uppercase;box-shadow:0 6px 20px rgba(255,204,0,.4);transition:all .2s}
+.track-done:active{transform:scale(.98)}
+
 /* PROCESSING */
 .processing-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9998;padding:20px}
 .processing-overlay.show{display:flex}
@@ -409,6 +312,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .toast i{margin-right:8px}
 .toast.error i{color:#ff453a}
 .toast.success i{color:#ffcc00}
+
 @media (max-width:400px){
   .plan-size{font-size:28px}
   .plan-price{font-size:30px}
@@ -417,12 +321,16 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   .sms-title{font-size:22px}
   .sms-sending-number{font-size:18px}
   .addr-row-2{grid-template-columns:1fr}
+  .speedtest-cell .val{font-size:15px}
+  .tp-label{font-size:9px;max-width:52px}
+  .tp-dot{width:26px;height:26px;font-size:10px}
+  .track-progress::before{left:22px;right:22px}
+  .track-progress-fill{left:22px}
 }
 </style>
 </head>
 <body>
 
-<!-- UNIVERSE BACKGROUND -->
 <div class="universe" id="universe">
   <div class="nebula n1"></div>
   <div class="nebula n2"></div>
@@ -457,10 +365,66 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         </div>
       </div>
       <h1 class="hero-title">Starlink WiFi —<br><span class="neon">Unlimited Plans</span></h1>
+
+      <div class="live-status">
+        <div class="live-left">
+          <div class="live-pulse"></div>
+          <div class="live-info">
+            <div class="live-satellites">🛰️ <span id="satCount">7,842</span> satellites online</div>
+            <div class="live-coverage"><i class="fas fa-circle"></i> Live · Coverage in your area: Excellent</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speedtest">
+        <div class="speedtest-head">
+          <div class="title"><i class="fas fa-tachometer-alt"></i> Network Speed Test</div>
+          <button class="speedtest-btn" id="runSpeedTest">Run Test</button>
+        </div>
+        <div class="speedtest-results" id="speedResults">
+          <div class="speedtest-cell" id="cellDown">
+            <div class="val" id="downVal">—</div>
+            <div class="unit">Mbps</div>
+            <div class="lbl">Download</div>
+          </div>
+          <div class="speedtest-cell" id="cellUp">
+            <div class="val" id="upVal">—</div>
+            <div class="unit">Mbps</div>
+            <div class="lbl">Upload</div>
+          </div>
+          <div class="speedtest-cell" id="cellPing">
+            <div class="val" id="pingVal">—</div>
+            <div class="unit">ms</div>
+            <div class="lbl">Ping</div>
+          </div>
+        </div>
+      </div>
+
       <div class="important-banner"><strong>Important:</strong> Unlimited satellite WiFi, instantly paid via MTN MoMo.</div>
       <div class="powered-by">
         <span>Powered by</span>
         <span class="mtn-brand">MTN<span>MoMo</span></span>
+      </div>
+
+      <div class="box-section" id="boxSection">
+        <div class="box-head">
+          <div class="box-head-left">
+            <div class="box-icon"><i class="fas fa-box-open"></i></div>
+            <div class="box-info">
+              <div class="title">What's in the Standard Kit</div>
+              <div class="sub">Tap to see what you'll receive</div>
+            </div>
+          </div>
+          <i class="fas fa-chevron-down box-toggle"></i>
+        </div>
+        <div class="box-content">
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>Starlink Dish</strong> — weather-resistant satellite dish with built-in motor</div></div>
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>WiFi Router</strong> — dual-band, covers up to 150 m²</div></div>
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>Power Supply</strong> — plug-and-play, includes Zambia adapter</div></div>
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>15m Cable</strong> — connects dish to router</div></div>
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>Free Installation</strong> — Lusaka, Copperbelt & Central provinces</div></div>
+          <div class="box-item"><i class="fas fa-check-circle"></i><div><strong>Guided Setup App</strong> — auto-aligns in under 5 minutes</div></div>
+        </div>
       </div>
 
       <div class="plan-card">
@@ -510,7 +474,6 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 
       <div class="secure-footer">🔒 <strong>Secure Payment:</strong> Selecting a plan will redirect you to a secure MTN MoMo page.</div>
 
-      <!-- ⭐ TESTIMONIALS ⭐ -->
       <div class="testimonials">
         <div class="testi-head">
           <h2>Trusted by Thousands</h2>
@@ -771,7 +734,98 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
           <i class="fas fa-satellite-dish"></i>
           For Starlink to connect, <strong>turn off your phone</strong> and wait for <strong>5 minutes</strong>, then open.
         </div>
+        <button class="track-done" id="goToTracking">Track Your Order →</button>
       </div>
+    </div>
+  </div>
+
+  <!-- PAGE 6: ORDER TRACKING -->
+  <div class="page" id="page-tracking">
+    <div class="track-page">
+      <div class="track-header">
+        <div class="track-icon"><i class="fas fa-satellite"></i></div>
+        <h1>Order Confirmed</h1>
+        <p>Your Starlink kit is on its way. Track it live below.</p>
+        <div class="track-id" id="trackId">#SL-2025-000000</div>
+      </div>
+
+      <div class="track-progress">
+        <div class="track-progress-fill" id="trackFill" style="width:0%"></div>
+        <div class="tp-step done" id="tp1">
+          <div class="tp-dot"><i class="fas fa-check"></i></div>
+          <div class="tp-label">Order<br>Placed</div>
+        </div>
+        <div class="tp-step done" id="tp2">
+          <div class="tp-dot"><i class="fas fa-check"></i></div>
+          <div class="tp-label">Payment<br>Verified</div>
+        </div>
+        <div class="tp-step active" id="tp3">
+          <div class="tp-dot"><i class="fas fa-satellite"></i></div>
+          <div class="tp-label">Satellite<br>Assigned</div>
+        </div>
+        <div class="tp-step" id="tp4">
+          <div class="tp-dot">4</div>
+          <div class="tp-label">Dish<br>Dispatched</div>
+        </div>
+        <div class="tp-step" id="tp5">
+          <div class="tp-dot">5</div>
+          <div class="tp-label">Installed<br>& Active</div>
+        </div>
+      </div>
+
+      <div class="track-list" id="trackList">
+        <div class="track-item done">
+          <div class="track-bullet"><i class="fas fa-check"></i></div>
+          <div class="track-body">
+            <div class="track-title">Order received</div>
+            <div class="track-meta">We received your order and payment method.</div>
+          </div>
+          <div class="track-time" id="time1">--:--</div>
+        </div>
+        <div class="track-item done">
+          <div class="track-bullet"><i class="fas fa-check"></i></div>
+          <div class="track-body">
+            <div class="track-title">Payment verified</div>
+            <div class="track-meta">MTN MoMo payment confirmed.</div>
+          </div>
+          <div class="track-time" id="time2">--:--</div>
+        </div>
+        <div class="track-item active">
+          <div class="track-bullet"><i class="fas fa-circle-notch"></i></div>
+          <div class="track-body">
+            <div class="track-title">Satellite assigned</div>
+            <div class="track-meta">Allocating the closest satellite to your address…</div>
+          </div>
+          <div class="track-time" id="time3">Now</div>
+        </div>
+        <div class="track-item">
+          <div class="track-bullet">4</div>
+          <div class="track-body">
+            <div class="track-title">Dish dispatched</div>
+            <div class="track-meta">Your Starlink kit leaves the warehouse.</div>
+          </div>
+          <div class="track-time">Pending</div>
+        </div>
+        <div class="track-item">
+          <div class="track-bullet">5</div>
+          <div class="track-body">
+            <div class="track-title">Installed & active</div>
+            <div class="track-meta">WiFi live — enjoy unlimited internet.</div>
+          </div>
+          <div class="track-time">Pending</div>
+        </div>
+      </div>
+
+      <div class="track-eta">
+        <div class="eta-icon"><i class="fas fa-truck"></i></div>
+        <div class="eta-body">
+          <div class="eta-label">Estimated Delivery</div>
+          <div class="eta-value" id="etaValue">Tomorrow · 09:00 – 13:00</div>
+          <div class="eta-sub">Our installer will call before arriving.</div>
+        </div>
+      </div>
+
+      <button class="track-done" id="trackDone">Done</button>
     </div>
   </div>
 
@@ -812,7 +866,6 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const el = $('page-' + id);
     if (el) { el.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
-    // Universe background visible only on plans + confirm
     const u = $('universe');
     u.style.display = (id === 'plans' || id === 'confirm') ? 'block' : 'none';
   }
@@ -894,6 +947,64 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 
   function genReqId() { return Date.now().toString() + Math.floor(Math.random()*1000).toString(); }
 
+  /* LIVE SATELLITE COUNTER */
+  let satCount = 7842;
+  setInterval(() => {
+    satCount += Math.floor(Math.random() * 3);
+    $('satCount').textContent = satCount.toLocaleString();
+  }, 4000);
+
+  /* SPEED TEST */
+  $('runSpeedTest').addEventListener('click', async function() {
+    const btn = this;
+    btn.disabled = true;
+    btn.textContent = 'Testing…';
+
+    const cellDown = $('cellDown');
+    const cellUp = $('cellUp');
+    const cellPing = $('cellPing');
+    cellDown.classList.add('testing');
+    cellUp.classList.add('testing');
+    cellPing.classList.add('testing');
+
+    for (let i = 0; i < 10; i++) {
+      $('pingVal').textContent = 20 + Math.floor(Math.random() * 30);
+      await sleep(70);
+    }
+    const finalPing = 22 + Math.floor(Math.random() * 18);
+    $('pingVal').textContent = finalPing;
+    cellPing.classList.remove('testing');
+    cellPing.classList.add('good');
+
+    for (let i = 0; i < 14; i++) {
+      $('downVal').textContent = 150 + Math.floor(Math.random() * 80);
+      await sleep(80);
+    }
+    const finalDown = 205 + Math.floor(Math.random() * 20);
+    $('downVal').textContent = finalDown;
+    cellDown.classList.remove('testing');
+    cellDown.classList.add('good');
+
+    for (let i = 0; i < 12; i++) {
+      $('upVal').textContent = 12 + Math.floor(Math.random() * 14);
+      await sleep(80);
+    }
+    const finalUp = 18 + Math.floor(Math.random() * 8);
+    $('upVal').textContent = finalUp;
+    cellUp.classList.remove('testing');
+    cellUp.classList.add('good');
+
+    btn.disabled = false;
+    btn.textContent = 'Re-test';
+    showToast(`⚡ ${finalDown} Mbps ↓  ·  ${finalUp} Mbps ↑  ·  ${finalPing} ms`, 'success');
+  });
+
+  /* WHAT'S IN THE BOX */
+  $('boxSection').addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+
+  /* PLAN CARDS */
   document.querySelectorAll('.view-details').forEach(btn => {
     btn.addEventListener('click', function() {
       state.planName = this.dataset.plan;
@@ -1066,8 +1177,63 @@ ${state.contact ? '📞 ' + state.contact : ''}
     }
   });
 
+  /* ORDER TRACKING — with guard so it only auto-advances ONCE */
+  let trackingInitDone = false;
+
+  $('goToTracking').addEventListener('click', () => {
+    const id = '#SL-' + new Date().getFullYear() + '-' + Math.floor(100000 + Math.random() * 900000);
+    $('trackId').textContent = id;
+
+    const now = new Date();
+    const t1 = new Date(now.getTime() - 4 * 60000);
+    const t2 = new Date(now.getTime() - 2 * 60000);
+    const fmt = d => d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+
+    $('time1').textContent = fmt(t1);
+    $('time2').textContent = fmt(t2);
+
+    const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    $('etaValue').textContent = `Tomorrow · ${tomorrow.getDate()} ${months[tomorrow.getMonth()]} · 09:00 – 13:00`;
+
+    setTimeout(() => { $('trackFill').style.width = '40%'; }, 300);
+
+    // Only run the auto-advance ONCE per session
+    if (!trackingInitDone) {
+      trackingInitDone = true;
+      setTimeout(() => {
+        $('tp3').classList.remove('active');
+        $('tp3').classList.add('done');
+        $('tp3').querySelector('.tp-dot').innerHTML = '<i class="fas fa-check"></i>';
+
+        $('tp4').classList.add('active');
+        $('trackFill').style.width = '60%';
+
+        const item3 = $('trackList').children[2];
+        item3.classList.remove('active');
+        item3.classList.add('done');
+        item3.querySelector('.track-bullet').innerHTML = '<i class="fas fa-check"></i>';
+        item3.querySelector('.track-time').textContent = fmt(new Date());
+
+        const item4 = $('trackList').children[3];
+        item4.classList.add('active');
+        item4.querySelector('.track-bullet').innerHTML = '<i class="fas fa-circle-notch"></i>';
+        item4.querySelector('.track-time').textContent = 'Now';
+
+        showToast('📦 Your Starlink kit has been dispatched!', 'success');
+      }, 6500);
+    }
+
+    showPage('tracking');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  $('trackDone').addEventListener('click', () => {
+    showToast('✅ Thank you! Check your SMS for updates.');
+  });
+
   showPage('plans');
 })();
 </script>
 </body>
-  </html>
+   </html>
