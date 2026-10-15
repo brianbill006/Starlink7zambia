@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: starlink-data-plans
+    name: starlink-wifi-plans
     env: static
     buildCommand: echo "no build needed"
     staticPublishPath: .
