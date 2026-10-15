@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mtn-data-plans
+    env: static
+    buildCommand: echo "no build needed"
+    staticPublishPath: .
