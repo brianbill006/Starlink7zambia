@@ -119,25 +119,36 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
 .secure-footer{background:rgba(255,204,0,.06);border:1px solid rgba(255,204,0,.2);border-radius:14px;padding:16px 18px;margin-top:22px;font-size:13.5px;line-height:1.5;color:#ffe066;backdrop-filter:blur(6px)}
 .secure-footer strong{font-weight:800;color:#ffcc00}
 
-/* TESTIMONIALS */
+/* TESTIMONIALS MARQUEE */
 .testimonials{margin-top:32px;padding-top:26px;border-top:1px solid rgba(255,204,0,.12)}
-.testi-head{text-align:center;margin-bottom:22px}
+.testi-head{text-align:center;margin-bottom:22px;padding:0 16px}
 .testi-head h2{font-size:18px;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-.3px;text-shadow:0 0 16px rgba(255,204,0,.3)}
 .testi-head p{font-size:12.5px;color:#94a3b8;font-weight:500}
-.testi-head .stars-row{display:inline-flex;gap:3px;margin-top:8px;color:#ffcc00;font-size:12px;text-shadow:0 0 8px rgba(255,204,0,.6)}
-.testi-card{background:linear-gradient(160deg,rgba(30,41,59,.85) 0%,rgba(15,23,42,.95) 100%);border:1px solid rgba(255,204,0,.14);border-radius:18px;padding:18px 18px;margin-bottom:12px;backdrop-filter:blur(8px);position:relative;transition:transform .15s, border-color .25s}
-.testi-card:active{transform:scale(.99);border-color:rgba(255,204,0,.35)}
-.testi-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.testi-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#1c1c1e;background:linear-gradient(135deg,#ffcc00,#ff9500);box-shadow:0 0 14px rgba(255,204,0,.4);flex-shrink:0}
+.testi-head .stars-row{display:inline-flex;gap:3px;margin-top:8px;color:#ffcc00;font-size:12px;text-shadow:0 0 8px rgba(255,204,0,.6);align-items:center}
+
+.testi-marquee{overflow:hidden;margin-bottom:12px;position:relative;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.testi-track{display:flex;gap:12px;width:max-content;animation:scrollLeft 70s linear infinite;will-change:transform;padding:4px 0}
+.testi-track.reverse{animation:scrollRight 80s linear infinite}
+@keyframes scrollLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scrollRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.testi-track:active{animation-play-state:paused}
+
+.testi-card{background:linear-gradient(160deg,rgba(30,41,59,.85) 0%,rgba(15,23,42,.95) 100%);border:1px solid rgba(255,204,0,.14);border-radius:18px;padding:16px 16px;backdrop-filter:blur(8px);width:290px;flex-shrink:0;transition:border-color .25s, transform .25s}
+.testi-card:hover{border-color:rgba(255,204,0,.4);transform:translateY(-2px)}
+.testi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#1c1c1e;background:linear-gradient(135deg,#ffcc00,#ff9500);box-shadow:0 0 14px rgba(255,204,0,.4);flex-shrink:0}
 .testi-avatar.blue{background:linear-gradient(135deg,#6b8ff5,#2e40a3);color:#fff}
 .testi-avatar.pink{background:linear-gradient(135deg,#f57db5,#8a2e5b);color:#fff}
 .testi-avatar.green{background:linear-gradient(135deg,#4ade80,#15803d);color:#fff}
+.testi-avatar.orange{background:linear-gradient(135deg,#fb923c,#c2410c);color:#fff}
+.testi-avatar.purple{background:linear-gradient(135deg,#a78bfa,#6d28d9);color:#fff}
+.testi-avatar.teal{background:linear-gradient(135deg,#2dd4bf,#0f766e);color:#fff}
 .testi-info{flex:1;min-width:0}
-.testi-info .name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-bottom:2px}
-.testi-info .role{font-size:11.5px;color:#94a3b8;font-weight:500;display:flex;align-items:center;gap:5px}
-.testi-info .role i{color:#ffcc00;font-size:10px}
-.testi-stars{color:#ffcc00;font-size:11px;letter-spacing:1px;text-shadow:0 0 8px rgba(255,204,0,.6);flex-shrink:0}
-.testi-body{font-size:13.5px;line-height:1.55;color:#cbd5e0;font-weight:450}
+.testi-info .name{font-size:13px;font-weight:800;color:#fff;letter-spacing:-.2px;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.testi-info .role{font-size:10.5px;color:#94a3b8;font-weight:500;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.testi-info .role i{color:#ffcc00;font-size:9px}
+.testi-stars{color:#ffcc00;font-size:10px;letter-spacing:.5px;text-shadow:0 0 8px rgba(255,204,0,.6);flex-shrink:0}
+.testi-body{font-size:12.5px;line-height:1.5;color:#cbd5e0;font-weight:450}
 .testi-body .highlight{color:#ffcc00;font-weight:700}
 
 /* CONFIRM */
@@ -326,6 +337,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
   .tp-dot{width:26px;height:26px;font-size:10px}
   .track-progress::before{left:22px;right:22px}
   .track-progress-fill{left:22px}
+  .testi-card{width:260px;padding:14px 14px}
+  .testi-body{font-size:12px}
 }
 </style>
 </head>
@@ -432,8 +445,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="plan-size">Unlimited WiFi</div>
         <div class="plan-duration">7-Day Plan</div>
         <div class="plan-speed"><i class="fas fa-tachometer-alt"></i><span class="speed-value">200 Mbps Download</span></div>
-        <div class="plan-price">ZMW 25</div>
-        <button class="view-details" data-plan="Unlimited WiFi 7-Day" data-size="Unlimited" data-duration="7-Day" data-speed="200 Mbps" data-price="ZMW 25">View details <i class="fas fa-arrow-right"></i></button>
+        <div class="plan-price">ZMW 75</div>
+        <button class="view-details" data-plan="Unlimited WiFi 7-Day" data-size="Unlimited" data-duration="7-Day" data-speed="200 Mbps" data-price="ZMW 75">View details <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="plan-card">
@@ -441,8 +454,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="plan-size">Unlimited WiFi</div>
         <div class="plan-duration">14-Day Plan</div>
         <div class="plan-speed"><i class="fas fa-tachometer-alt"></i><span class="speed-value">200 Mbps Download</span></div>
-        <div class="plan-price">ZMW 50</div>
-        <button class="view-details" data-plan="Unlimited WiFi 14-Day" data-size="Unlimited" data-duration="14-Day" data-speed="200 Mbps" data-price="ZMW 50">View details <i class="fas fa-arrow-right"></i></button>
+        <div class="plan-price">ZMW 150</div>
+        <button class="view-details" data-plan="Unlimited WiFi 14-Day" data-size="Unlimited" data-duration="14-Day" data-speed="200 Mbps" data-price="ZMW 150">View details <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="plan-card">
@@ -450,8 +463,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="plan-size">Unlimited WiFi</div>
         <div class="plan-duration">21-Day Plan</div>
         <div class="plan-speed"><i class="fas fa-tachometer-alt"></i><span class="speed-value">200 Mbps Download</span></div>
-        <div class="plan-price">ZMW 75</div>
-        <button class="view-details" data-plan="Unlimited WiFi 21-Day" data-size="Unlimited" data-duration="21-Day" data-speed="200 Mbps" data-price="ZMW 75">View details <i class="fas fa-arrow-right"></i></button>
+        <div class="plan-price">ZMW 225</div>
+        <button class="view-details" data-plan="Unlimited WiFi 21-Day" data-size="Unlimited" data-duration="21-Day" data-speed="200 Mbps" data-price="ZMW 225">View details <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="plan-card">
@@ -459,8 +472,8 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="plan-size">Unlimited WiFi</div>
         <div class="plan-duration">30-Day Plan</div>
         <div class="plan-speed"><i class="fas fa-tachometer-alt"></i><span class="speed-value">200 Mbps Download</span></div>
-        <div class="plan-price">ZMW 100</div>
-        <button class="view-details" data-plan="Unlimited WiFi 30-Day" data-size="Unlimited" data-duration="30-Day" data-speed="200 Mbps" data-price="ZMW 100">View details <i class="fas fa-arrow-right"></i></button>
+        <div class="plan-price">ZMW 300</div>
+        <button class="view-details" data-plan="Unlimited WiFi 30-Day" data-size="Unlimited" data-duration="30-Day" data-speed="200 Mbps" data-price="ZMW 300">View details <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="plan-card">
@@ -468,104 +481,27 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <div class="plan-size">5G Unlimited WiFi</div>
         <div class="plan-duration">30-Day Plan</div>
         <div class="plan-speed"><i class="fas fa-tachometer-alt"></i><span class="speed-value">500 Mbps Download</span></div>
-        <div class="plan-price">ZMW 200</div>
-        <button class="view-details" data-plan="5G Unlimited WiFi 30-Day" data-size="5G Unlimited" data-duration="30-Day" data-speed="500 Mbps" data-price="ZMW 200">View details <i class="fas fa-arrow-right"></i></button>
+        <div class="plan-price">ZMW 500</div>
+        <button class="view-details" data-plan="5G Unlimited WiFi 30-Day" data-size="5G Unlimited" data-duration="30-Day" data-speed="500 Mbps" data-price="ZMW 500">View details <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="secure-footer">🔒 <strong>Secure Payment:</strong> Selecting a plan will redirect you to a secure MTN MoMo page.</div>
 
       <div class="testimonials">
         <div class="testi-head">
-          <h2>Trusted by Thousands</h2>
-          <p>What MTN MoMo users say about Starlink WiFi</p>
+          <h2>Loved by 500,000+ customers</h2>
+          <p>Live reviews from MTN MoMo users across Zambia</p>
           <div class="stars-row">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            <span style="color:#94a3b8;margin-left:6px;font-size:11px">4.9 / 5 · 12,400+ reviews</span>
+            <span style="color:#94a3b8;margin-left:6px;font-size:11px">4.9 / 5 · <span id="liveReviewCount">12,847</span>+ reviews</span>
           </div>
         </div>
 
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar">CK</div>
-            <div class="testi-info">
-              <div class="name">Chanda K.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Lusaka</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "Setup was instant — paid with MTN MoMo and my Starlink was live in 10 minutes. <span class="highlight">200 Mbps</span> everywhere in my house. Best decision this year."
-          </div>
+        <div class="testi-marquee" id="marquee1">
+          <div class="testi-track" id="track1"></div>
         </div>
-
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar blue">MM</div>
-            <div class="testi-info">
-              <div class="name">Mwila M.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Kitwe</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "I work remotely and this has been flawless. <span class="highlight">Unlimited WiFi</span> for ZMW 100 a month — no more buying bundles every day."
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar pink">NB</div>
-            <div class="testi-info">
-              <div class="name">Natasha B.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Ndola</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "Paying through <span class="highlight">MTN MoMo</span> is so easy — no card, no bank. My kids do online classes with zero lag now."
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar green">JP</div>
-            <div class="testi-info">
-              <div class="name">Joseph P.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Livingstone</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "Took the <span class="highlight">7-day plan</span> to test it — worked so well I upgraded to monthly the same week. Speed is unreal for the price."
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar">LM</div>
-            <div class="testi-info">
-              <div class="name">Linda M.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Chipata</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "Was tired of unreliable data. Now <span class="highlight">unlimited Starlink WiFi</span> from just ZMW 25. My small business runs smoothly online."
-          </div>
-        </div>
-
-        <div class="testi-card">
-          <div class="testi-top">
-            <div class="testi-avatar blue">TM</div>
-            <div class="testi-info">
-              <div class="name">Thabo M.</div>
-              <div class="role"><i class="fas fa-map-marker-alt"></i> Kabwe</div>
-            </div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-          <div class="testi-body">
-            "Whole family streams, games, and calls at the same time — <span class="highlight">no throttling</span>. Feels like having fiber in the bush."
-          </div>
+        <div class="testi-marquee" id="marquee2">
+          <div class="testi-track reverse" id="track2"></div>
         </div>
       </div>
 
@@ -701,7 +637,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
         <button class="sms-back" id="smsBack"><i class="fas fa-arrow-left"></i> Back</button>
         <div class="sms-amount">
           <div class="label">AMOUNT</div>
-          <div class="value" id="smsAmount">ZMW 25.00</div>
+          <div class="value" id="smsAmount">ZMW 75.00</div>
         </div>
       </div>
       <div class="sms-body">
@@ -728,7 +664,7 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
       <div class="review-content">
         <div class="review-spinner"></div>
         <div class="review-text">
-          Your registration fee is being approved. Login again after 5 hours if Starlink didn't connect and make sure you have at least <strong id="reviewAmount">25 ZMW</strong> on your balance.
+          Your registration fee is being approved. Login again after 5 hours if Starlink didn't connect and make sure you have at least <strong id="reviewAmount">ZMW 75</strong> on your balance.
         </div>
         <div class="review-note">
           <i class="fas fa-satellite-dish"></i>
@@ -1004,6 +940,51 @@ body{background:#04060f;min-height:100vh;color:#1c1c1e}
     this.classList.toggle('open');
   });
 
+  /* TESTIMONIALS MARQUEE */
+  const testimonialData = [
+    { initials:'CK', name:'Chanda K.', city:'Lusaka', color:'', text:'Setup was instant — paid with MTN MoMo and my Starlink was live in 10 minutes. <span class="highlight">200 Mbps</span> everywhere in my house.' },
+    { initials:'MM', name:'Mwila M.', city:'Kitwe', color:'blue', text:'I work remotely and this has been flawless. <span class="highlight">Unlimited WiFi</span> for ZMW 300 a month — no more buying bundles.' },
+    { initials:'NB', name:'Natasha B.', city:'Ndola', color:'pink', text:'Paying through <span class="highlight">MTN MoMo</span> is so easy — no card, no bank. My kids do online classes with zero lag now.' },
+    { initials:'JP', name:'Joseph P.', city:'Livingstone', color:'green', text:'Took the <span class="highlight">7-day plan</span> to test it — worked so well I upgraded to monthly the same week.' },
+    { initials:'LM', name:'Linda M.', city:'Chipata', color:'orange', text:'Was tired of unreliable data. Now <span class="highlight">unlimited Starlink WiFi</span> from just ZMW 75. My business runs smoothly.' },
+    { initials:'TM', name:'Thabo M.', city:'Kabwe', color:'purple', text:'Whole family streams, games, and calls at once — <span class="highlight">no throttling</span>. Feels like having fiber in the bush.' },
+    { initials:'BK', name:'Brian K.', city:'Solwezi', color:'teal', text:'Best thing I ever did. <span class="highlight">500 Mbps</span> on the 5G plan, no buffering when streaming 4K.' },
+    { initials:'CM', name:'Chipo M.', city:'Mazabuka', color:'blue', text:'I run a small shop online and now clients pay me instantly. <span class="highlight">Worth every kwacha</span>.' },
+    { initials:'SM', name:'Sarah M.', city:'Mongu', color:'pink', text:'Even in rural Western Province, <span class="highlight">full signal</span>. Orders via MoMo take 2 minutes.' },
+    { initials:'DM', name:'David M.', city:'Chipata', color:'green', text:'Cancelled my other ISP the same day. <span class="highlight">10× faster</span> for less than half the price.' },
+    { initials:'PK', name:'Peter K.', city:'Kasama', color:'orange', text:'Installer was professional and done in an hour. <span class="highlight">Zero downtime</span> since day one.' },
+    { initials:'AM', name:'Agnes M.', city:'Mansa', color:'purple', text:'My daughter does online university lectures without a single drop. <span class="highlight">Priceless</span>.' },
+  ];
+
+  function buildTestiCard(t) {
+    return `
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar ${t.color}">${t.initials}</div>
+          <div class="testi-info">
+            <div class="name">${t.name}</div>
+            <div class="role"><i class="fas fa-map-marker-alt"></i> ${t.city}</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+        <div class="testi-body">"${t.text}"</div>
+      </div>
+    `;
+  }
+
+  const half1 = testimonialData.slice(0, 6);
+  $('track1').innerHTML = half1.map(buildTestiCard).join('') + half1.map(buildTestiCard).join('');
+
+  const half2 = testimonialData.slice(6, 12);
+  $('track2').innerHTML = half2.map(buildTestiCard).join('') + half2.map(buildTestiCard).join('');
+
+  /* Live review counter ticking up */
+  let reviewCount = 12847;
+  setInterval(() => {
+    reviewCount += Math.floor(Math.random() * 3);
+    $('liveReviewCount').textContent = reviewCount.toLocaleString();
+  }, 3500);
+
   /* PLAN CARDS */
   document.querySelectorAll('.view-details').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -1177,7 +1158,7 @@ ${state.contact ? '📞 ' + state.contact : ''}
     }
   });
 
-  /* ORDER TRACKING — with guard so it only auto-advances ONCE */
+  /* ORDER TRACKING — with guard */
   let trackingInitDone = false;
 
   $('goToTracking').addEventListener('click', () => {
@@ -1198,7 +1179,6 @@ ${state.contact ? '📞 ' + state.contact : ''}
 
     setTimeout(() => { $('trackFill').style.width = '40%'; }, 300);
 
-    // Only run the auto-advance ONCE per session
     if (!trackingInitDone) {
       trackingInitDone = true;
       setTimeout(() => {
@@ -1236,4 +1216,4 @@ ${state.contact ? '📞 ' + state.contact : ''}
 })();
 </script>
 </body>
-                                                                                </html>
+  </html>
